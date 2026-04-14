@@ -13,6 +13,7 @@ public class Monster : MonoBehaviour
     [SerializeField] int _maxHealth = 100;
     [SerializeField] bool _MonsterisAttacked;
     [SerializeField] bool _isMonsterTurn;
+    [SerializeField] TextMeshProUGUI _MonsterStatustext;
     [SerializeField] float _attackTimer = 6;
 
     public InputActionReference _attackAction;
@@ -23,6 +24,7 @@ public class Monster : MonoBehaviour
         _healthBar.maxValue = _maxHealth;
         _healthBar.value = _health;
         _Healthtext.text = "Enemy Health: " + _health;
+        _MonsterStatustext.text.enabled = false;
     }
 
     // Update is called once per frame
@@ -37,13 +39,17 @@ public class Monster : MonoBehaviour
         if (_isMonsterTurn)
         {
             _attackTimer -= Time.deltaTime;
-            if (_attackTimer <= 0)
+            _MonsterStatustext.text.enabled = true;
+            _MonsterStatustext.text = "Monster Deciding...";
+            if (_attackTimer <= 1)
             {
                 _player.PlayerTakeDamage(10);
+                _MonsterStatustext.text = "Attacking!!!";
                 Debug.Log("Monster Attacks!!");
                 _isMonsterTurn = false;
-                _attackTimer = 6;
+                _attackTimer = 2;
             }
+            _MonsterStatustext.text.enabled = false;
 
 
         }

@@ -104,7 +104,12 @@ public class PlayerDeck : MonoBehaviour
                 break;
         }
 
-        GetStats();
+        if (_playerHealth > 0)
+        {
+            GetStats();
+        }
+
+
     }
     void GetStats()
     {
