@@ -141,16 +141,19 @@ public class PlayerDeck : MonoBehaviour
         if (randomCard == 1)
         {
             _androidInfo.health -= damage;
+            _playerHealth = _androidInfo.health;
 
         }
         if (randomCard == 2)
         {
             _cowboyInfo.health -= damage;
+            _playerHealth = _cowboyInfo.health;
 
         }
         if (randomCard == 3)
         {
             _empressInfo.health -= damage;
+            _playerHealth = _empressInfo.health;
         }
 
 
