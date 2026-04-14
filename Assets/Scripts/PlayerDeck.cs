@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public class PlayerDeck : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class PlayerDeck : MonoBehaviour
 
     [SerializeField] bool _isPlayerTurn = true;
     [SerializeField] int _totalHealth;
+
+    //List of alive cards
+    public List<string> PlayerCards = new List<string> { "android", "cowboy", "empress" };
+
 
     void Start()
     {
@@ -135,22 +140,24 @@ public class PlayerDeck : MonoBehaviour
 
     public void PlayerTakeDamage(int damage)
     {
-        int randomCard = Random.Range(1, 4);
+        //randomly select from alive player card list 
+        int randomIndex = Random.Range(0, PlayerCards.Count);
+        string randomCard = PlayerCards[randomIndex];
         Debug.Log(randomCard);
 
-        if (randomCard == 1)
+        if (randomCard == "android")
         {
             _androidInfo.health -= damage;
             _playerHealth = _androidInfo.health;
 
         }
-        if (randomCard == 2)
+        if (randomCard == "cowboy")
         {
             _cowboyInfo.health -= damage;
             _playerHealth = _cowboyInfo.health;
 
         }
-        if (randomCard == 3)
+        if (randomCard == "empress")
         {
             _empressInfo.health -= damage;
             _playerHealth = _empressInfo.health;
@@ -161,10 +168,11 @@ public class PlayerDeck : MonoBehaviour
 
         if (_playerHealth <= 0)
         {
-            Debug.Log("Disable the character");
+            Debug.Log("Disable the character: " + randomCard);
+            PlayerCards.Remove(randomCard);
         }
-        Debug.Log(_playerHealth);
 
+        Debug.Log(_playerHealth);
         _totalHealth -= damage;
         _totalHealthtext.text = "Player Health: " + _totalHealth;
 
