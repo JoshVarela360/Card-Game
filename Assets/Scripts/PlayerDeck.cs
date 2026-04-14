@@ -130,18 +130,25 @@ public class PlayerDeck : MonoBehaviour
 
     public void PlayerTakeDamage(int damage)
     {
-        if (_name == "Android")
+        int randomCard = Random.Range(1, 4);
+        Debug.Log(randomCard);
+
+        if (randomCard == 1)
         {
             _androidInfo.health -= damage;
+
         }
-        if (_name == "Cowboy")
+        if (randomCard == 2)
         {
             _cowboyInfo.health -= damage;
+
         }
-        if (_name == "Empress")
+        if (randomCard == 3)
         {
             _empressInfo.health -= damage;
         }
+
+
         _isPlayerTurn = true;
 
         if (_playerHealth <= 0)
@@ -149,6 +156,7 @@ public class PlayerDeck : MonoBehaviour
             Debug.Log("Disable the character");
         }
         Debug.Log(_playerHealth);
+
         _totalHealth -= damage;
         _totalHealthtext.text = "Player Health: " + _totalHealth;
 
