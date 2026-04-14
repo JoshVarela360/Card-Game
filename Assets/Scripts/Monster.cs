@@ -60,11 +60,13 @@ public class Monster : MonoBehaviour
         _health -= damage;
         _healthBar.value = _health;
         _Healthtext.text = "Enemy Health: " + _health;
-        _isMonsterTurn = true;
-
         if (_health <= 0)
         {
-            Debug.Log("You win!!");
+            _MonsterStatustext.text = "You Win!!!";
+            return;
         }
+        _isMonsterTurn = true;
+
+
     }
 }

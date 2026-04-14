@@ -517,7 +517,7 @@ MonoBehaviour:
   _MonsterisAttacked: 0
   _isMonsterTurn: 0
   _MonsterStatustext: {fileID: 811415168}
-  _attackTimer: 6
+  _attackTimer: 2
   _attackAction: {fileID: 2623096084649385394, guid: 05022772e01168047b49a82d8f19cc01, type: 3}
 --- !u!1 &323658367
 GameObject:
