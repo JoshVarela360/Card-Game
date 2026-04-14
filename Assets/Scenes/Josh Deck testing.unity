@@ -509,9 +509,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e4e3e4b354075488f5303b5ca09762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Monster
+  _player: {fileID: 1481589096}
   _healthBar: {fileID: 1899383414}
   _health: 0
   _maxHealth: 100
+  _MonsterisAttacked: 0
+  _isMonsterTurn: 0
+  _attackTimer: 6
   _attackAction: {fileID: 2623096084649385394, guid: 05022772e01168047b49a82d8f19cc01, type: 3}
 --- !u!1 &323658367
 GameObject:
@@ -1237,7 +1241,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 675519038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1481589096}
+        m_TargetAssemblyTypeName: PlayerDeck, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &675519038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1753,7 +1769,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1481589097}
   - component: {fileID: 1481589096}
-  - component: {fileID: 1481589098}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1773,6 +1788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cd8669a0b088f43b8733596130bc1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Playerattacks
+  _monster: {fileID: 304134557}
   _androidInfo: {fileID: 11400000, guid: ba903fbdc8218644e94a4d88267d2d02, type: 2}
   _cowboyInfo: {fileID: 11400000, guid: 9f78046c45ad48048a039d1088b8dac5, type: 2}
   _empressInfo: {fileID: 11400000, guid: f39e877dd04eb9c449a5d1ec0a435b78, type: 2}
@@ -1782,6 +1798,7 @@ MonoBehaviour:
   _playerHealth: 0
   _playerName: 
   _playerDamage: 0
+  _isPlayerTurn: 1
 --- !u!4 &1481589097
 Transform:
   m_ObjectHideFlags: 0
@@ -1797,36 +1814,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1481589098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481589095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
-  m_Actions: {fileID: -944628639613478452, guid: 05022772e01168047b49a82d8f19cc01, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Test
-  m_DefaultActionMap: Takedamage
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1538091505
 GameObject:
   m_ObjectHideFlags: 0
