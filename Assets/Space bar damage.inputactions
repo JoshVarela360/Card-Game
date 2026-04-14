@@ -1,0 +1,47 @@
+{
+    "version": 1,
+    "name": "Space bar damage",
+    "maps": [
+        {
+            "name": "Takedamage",
+            "id": "66e56488-f0d5-49da-ac2a-445313b0659e",
+            "actions": [
+                {
+                    "name": "fire",
+                    "type": "Button",
+                    "id": "6aa5d473-d65a-4c72-a7a6-176bf9af041c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "8974d742-c042-463d-ad6e-87cc6e358974",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Test",
+            "bindingGroup": "Test",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
