@@ -2,9 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Playerattacks : MonoBehaviour
+public class PlayerDeck : MonoBehaviour
 {
     
+
+//SCript References
+[SerializeField] MonsterHealthDamage _monster;
 //Scriptables
 [SerializeField] private CardInformation _androidInfo;
 [SerializeField] private CardInformation _cowboyInfo;
@@ -24,7 +27,7 @@ public class Playerattacks : MonoBehaviour
 [SerializeField] string _playerName;
 [SerializeField] int _playerDamage;
 
-   
+[SerializeField] bool _isPlayerTurn;
     void Update()
     {
         SelectedCardStats();
@@ -97,8 +100,20 @@ public class Playerattacks : MonoBehaviour
             _popUptext.text += "\nDamage:"+ _playerDamage;
 
         }
-          
         }
+
+        public void Attack()
+    {
+        if (_isPlayerTurn)
+        {
+            _monster.MonsterTakeDamage(_playerDamage);
+            _isPlayerTurn = false;
+        }
+    }
+
+
+
+
     
     
 }
