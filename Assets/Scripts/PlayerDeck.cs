@@ -135,11 +135,16 @@ public class PlayerDeck : MonoBehaviour
         {
             _monster.MonsterTakeDamage(_playerDamage);
             _isPlayerTurn = false;
+            //unslect player card
+            _name = null;
+            _attackMenu.SetActive(false);
         }
     }
 
     public void PlayerTakeDamage(int damage)
     {
+
+
         //randomly select from alive player card list 
         int randomIndex = Random.Range(0, PlayerCards.Count);
         string randomCard = PlayerCards[randomIndex];
