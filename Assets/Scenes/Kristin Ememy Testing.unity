@@ -2077,6 +2077,10 @@ MonoBehaviour:
   _playerDamage: 0
   _isPlayerTurn: 1
   _totalHealth: 0
+  PlayerCards:
+  - android
+  - cowboy
+  - empress
 --- !u!4 &1481589097
 Transform:
   m_ObjectHideFlags: 0
