@@ -11,6 +11,6 @@ public class SceneController : MonoBehaviour
     public void LoadGameScene() 
     {
         //Debug.Log("Game Scene"); 
-        SceneManager.LoadScene("Kristin Ememy Testing"); 
+        SceneManager.LoadScene("Combat Scene"); 
     } 
 }
