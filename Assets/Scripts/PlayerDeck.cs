@@ -43,7 +43,7 @@ public class PlayerDeck : MonoBehaviour
         _cowboyInfo.health = 20;
         _empressInfo.health = 30;
         _totalHealth = _androidInfo.health + _cowboyInfo.health + _empressInfo.health;
-        _totalHealthtext.text = "Player Health: " + _totalHealth;
+        _totalHealthtext.text = "Team Health: " + _totalHealth;
     }
     void Update()
     {
@@ -179,7 +179,7 @@ public class PlayerDeck : MonoBehaviour
 
         Debug.Log(_playerHealth);
         _totalHealth -= damage;
-        _totalHealthtext.text = "Player Health: " + _totalHealth;
+        _totalHealthtext.text = "Team Health: " + _totalHealth;
 
     }
 

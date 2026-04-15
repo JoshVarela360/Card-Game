@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cowboy
   m_EditorClassIdentifier: Assembly-CSharp::CardInformation
   cardName: Cowboy
-  damage: 10
+  damage: 20
   health: 20

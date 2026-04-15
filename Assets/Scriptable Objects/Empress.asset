@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Empress
   m_EditorClassIdentifier: Assembly-CSharp::CardInformation
   cardName: Empress
-  damage: 120
-  health: 300
+  damage: 10
+  health: 30
