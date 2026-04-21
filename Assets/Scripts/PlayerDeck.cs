@@ -16,10 +16,12 @@ public class PlayerDeck : MonoBehaviour
 
     //Cards
     [SerializeField] GameObject _deck;
-    [SerializeField] GameObject _androdCard;
-    [SerializeField] GameObject _cowboyCard;
-    [SerializeField] GameObject _empressCard;
+    public List<GameObject> PlayerCardObjects = new List<GameObject> { };
 
+    //Card Positions
+    [SerializeField] private float _moveupdistance;
+    [SerializeField] private float _deckdownlocation;
+    private float _deckuplocation;
 
 
 
@@ -52,6 +54,8 @@ public class PlayerDeck : MonoBehaviour
         _empressInfo.health = 30;
         _totalHealth = _androidInfo.health + _cowboyInfo.health + _empressInfo.health;
         _totalHealthtext.text = "Team Health: " + _totalHealth;
+        _deckuplocation = -_deck.GetComponent<RectTransform>().anchoredPosition.y - 50f;
+        _deckdownlocation = _deckuplocation - _moveupdistance;
     }
     void Update()
     {
@@ -64,14 +68,17 @@ public class PlayerDeck : MonoBehaviour
     public void CowboySelected()
     {
         _name = "Cowboy";
+
     }
     public void EmpressSelected()
     {
         _name = "Empress";
+
     }
     public void AndroidSelected()
     {
         _name = "Android";
+
     }
 
 
@@ -116,6 +123,18 @@ public class PlayerDeck : MonoBehaviour
                 _playerName = _empressInfo.name;
                 break;
         }
+        switch (_name)
+        {
+            case "Android":
+
+                break;
+            case "Cowboy":
+
+                break;
+            case "Empress":
+
+                break;
+        }
 
         if (_playerHealth > 0)
         {
@@ -129,6 +148,7 @@ public class PlayerDeck : MonoBehaviour
         if (_name == "Android" || _name == "Cowboy" || _name == "Empress")
         {
             _attackMenu.SetActive(true);
+            MoveCardUp();
             _popUptext.text = "Name:" + _playerName;
             _popUptext.text += "\nHealth:" + _playerHealth;
             _popUptext.text += "\nDamage:" + _playerDamage;
@@ -143,9 +163,11 @@ public class PlayerDeck : MonoBehaviour
         {
             _monster.MonsterTakeDamage(_playerDamage);
             _isPlayerTurn = false;
+            MoveCardDown();
             //unslect player card
             _name = null;
             _attackMenu.SetActive(false);
+            MoveDeckDown();
         }
     }
 
@@ -178,6 +200,7 @@ public class PlayerDeck : MonoBehaviour
 
 
         _isPlayerTurn = true;
+        MoveDeckUp();
 
         if (_playerHealth <= 0)
         {
@@ -191,6 +214,58 @@ public class PlayerDeck : MonoBehaviour
 
     }
 
+    void MoveCardUp()
+    {
+        foreach (GameObject card in PlayerCardObjects)
+        {
+            if (card.name.Contains(_name))
+            {
+                Vector2 tempPos = card.GetComponent<RectTransform>().anchoredPosition;
+                tempPos.y = _deckuplocation + _moveupdistance;
+                card.GetComponent<RectTransform>().anchoredPosition = tempPos;
+
+            }
+            else
+            {
+                Vector2 tempPos = card.GetComponent<RectTransform>().anchoredPosition;
+                tempPos.y = _deckuplocation;
+                card.GetComponent<RectTransform>().anchoredPosition = tempPos;
+            }
+
+        }
+    }
+    void MoveCardDown()
+    {
+        foreach (GameObject card in PlayerCardObjects)
+        {
+            if (card.name.Contains(_name))
+            {
+                Vector2 tempPos = card.GetComponent<RectTransform>().anchoredPosition;
+                tempPos.y = _deckuplocation;
+                card.GetComponent<RectTransform>().anchoredPosition = tempPos;
+
+            }
+
+        }
+    }
+
+    void MoveDeckUp()
+    {
+        Vector2 tempPos = _deck.GetComponent<RectTransform>().anchoredPosition;
+        tempPos.y = _deckuplocation;
+        _deck.GetComponent<RectTransform>().anchoredPosition = tempPos;
+
+    }
+
+
+
+    void MoveDeckDown()
+    {
+        Vector2 tempPos = _deck.GetComponent<RectTransform>().anchoredPosition;
+        tempPos.y = _deckdownlocation;
+        _deck.GetComponent<RectTransform>().anchoredPosition = tempPos;
+
+    }
 
 
 
