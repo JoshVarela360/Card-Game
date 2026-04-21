@@ -45,14 +45,21 @@ public class Monster : MonoBehaviour
             _attackTimer -= Time.deltaTime;
             _MonsterStatustext.text = "Monster Deciding...";
 
-            if (_attackTimer <= 1)
+            if (_attackTimer <= 0.5)
             {
                 _player.PlayerTakeDamage(10);
                 _MonsterStatustext.text = "Attacking!!!";
                 Debug.Log("Monster Attacks!!");
                 _isMonsterTurn = false;
-                _attackTimer = 2;
+                _attackTimer = 1;
                 _MonsterStatustext.text = "";
+                if (_player._totalHealth <= 0)
+                {
+                    _MonsterStatustext.text = "You Lose!!!";
+                    _mapButton.SetActive(true);
+                    _isMonsterTurn = false;
+
+                }
             }
 
         }
@@ -67,7 +74,7 @@ public class Monster : MonoBehaviour
         if (_health <= 0)
         {
             _MonsterStatustext.text = "You Win!!!";
-           AddCrystal?.Invoke();
+            AddCrystal?.Invoke();
             _mapButton.SetActive(true);
             return;
         }

@@ -53,7 +53,7 @@ public class PlayerDeck : MonoBehaviour
     [SerializeField] int _playerDamage;
 
     [SerializeField] bool _isPlayerTurn = true;
-    [SerializeField] int _totalHealth;
+    [SerializeField] public int _totalHealth;
 
     //List of alive cards
     public List<string> PlayerCards = new List<string> { "android", "cowboy", "empress" };
@@ -265,19 +265,22 @@ public class PlayerDeck : MonoBehaviour
             _playerHealth = _empressInfo.health;
         }
 
-
-        _isPlayerTurn = true;
-        MoveDeckUp();
-
+        //disable the card from future selection if dead
         if (_playerHealth <= 0)
         {
             Debug.Log("Disable the character: " + randomCard);
             PlayerCards.Remove(randomCard);
         }
-
-        Debug.Log(_playerHealth);
+        //Update total health text
         _totalHealth -= damage;
         _totalHealthtext.text = "Team Health: " + _totalHealth;
+
+        //Update player health text
+        UpdateGameStats();
+
+        //proceed to player turn
+        _isPlayerTurn = true;
+        MoveDeckUp();
 
     }
 
