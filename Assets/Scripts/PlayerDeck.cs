@@ -72,6 +72,7 @@ public class PlayerDeck : MonoBehaviour
         _totalHealthtext.text = "Team Health: " + _totalHealth;
         _deckuplocation = _deck.GetComponent<RectTransform>().anchoredPosition.y + _moveupdistance;
         _deckdownlocation = _deckuplocation - _moveupdistance;
+        UpdateGameStats();
     }
     void Update()
     {

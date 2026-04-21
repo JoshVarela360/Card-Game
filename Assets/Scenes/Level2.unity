@@ -1771,7 +1771,7 @@ MonoBehaviour:
   - {fileID: 323658367}
   - {fileID: 651461518}
   - {fileID: 976279640}
-  _moveupdistance: 10
+  _moveupdistance: 20
   _deckdownlocation: 0
   _attackMenu: {fileID: 675519035}
   _totalHealthtext: {fileID: 1855258775}
