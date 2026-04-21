@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1917d7eb64426b644b683c3e9cdeb38f
+guid: 52fbd5c807ab49248850901d38f27e7c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mewtwo card (1)_0
+      name: ErasHealthBar_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 232
-        height: 310
+        x: 40
+        y: 957
+        width: 1920
+        height: 86
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9ff7a9756f170149b0b2e14ccc72898
-      internalID: -119965309
+      spriteID: 04b3951ddcd8b11419a27a780a1443de
+      internalID: -224558984
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d76ebdb0c4049164db73d475f08c406c
+    spriteID: 02b940ebe7907f746be84bdaa8e1330d
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Mewtwo card (1)_0: -119965309
+      ErasHealthBar_0: -224558984
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
