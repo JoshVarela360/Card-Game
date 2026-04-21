@@ -14,6 +14,14 @@ public class PlayerDeck : MonoBehaviour
     [SerializeField] private CardInformation _cowboyInfo;
     [SerializeField] private CardInformation _empressInfo;
 
+    //Cards
+    [SerializeField] GameObject _deck;
+    [SerializeField] GameObject _androdCard;
+    [SerializeField] GameObject _cowboyCard;
+    [SerializeField] GameObject _empressCard;
+
+
+
 
     //UI
 

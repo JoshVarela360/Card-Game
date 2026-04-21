@@ -2281,6 +2281,10 @@ MonoBehaviour:
   _androidInfo: {fileID: 11400000, guid: ba903fbdc8218644e94a4d88267d2d02, type: 2}
   _cowboyInfo: {fileID: 11400000, guid: 9f78046c45ad48048a039d1088b8dac5, type: 2}
   _empressInfo: {fileID: 11400000, guid: f39e877dd04eb9c449a5d1ec0a435b78, type: 2}
+  _deck: {fileID: 1538091505}
+  _androdCard: {fileID: 0}
+  _cowboyCard: {fileID: 0}
+  _empressCard: {fileID: 0}
   _popUptext: {fileID: 420815720}
   _attackMenu: {fileID: 2124914696}
   _totalHealthtext: {fileID: 1855258775}
