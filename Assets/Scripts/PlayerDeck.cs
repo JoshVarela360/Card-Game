@@ -71,24 +71,24 @@ public class PlayerDeck : MonoBehaviour
     }
     void StartingCharacterStats()
     {
-        if(_androidInfo && _cowboyInfo && _empressInfo == null)
+        if (_androidInfo && _cowboyInfo && _empressInfo == null)
         {
-         _androidInfo.health = 10;
-        _cowboyInfo.health = 20;
-        _empressInfo.health = 30;
-         _androidInfo.damage = 30;
-        _cowboyInfo.damage= 20;
-        _empressInfo.damage = 10;
+            _androidInfo.health = 10;
+            _cowboyInfo.health = 20;
+            _empressInfo.health = 30;
+            _androidInfo.damage = 30;
+            _cowboyInfo.damage = 20;
+            _empressInfo.damage = 10;
         }
-       
-       
+
+
     }
 
-    
+
     //Selection of Cards
     public void CowboySelected()
     {
-        
+
         _name = "Cowboy";
 
     }
@@ -145,7 +145,7 @@ public class PlayerDeck : MonoBehaviour
                 _playerName = _empressInfo.name;
                 break;
         }
-        
+
 
         switch (_name)
         {
@@ -159,27 +159,33 @@ public class PlayerDeck : MonoBehaviour
 
                 break;
         }
-        
-    UpdateGameStats();
 
-    //Attack Pop up button
-     AttackPopup();
+        if (_playerHealth > 0)
+        {
+            UpdateGameStats();
+
+            //Attack Pop up button
+            AttackPopup();
+
+        }
+
+
     }
     public void UpdateGameStats()
     {
-     _empATK.text = _empressInfo.damage.ToString();
+        _empATK.text = _empressInfo.damage.ToString();
 
-    _empHP.text = _empressInfo.health.ToString();
+        _empHP.text = _empressInfo.health.ToString();
 
-    //Cowboy stats UI
-    _cowATK.text = _cowboyInfo.damage.ToString();
+        //Cowboy stats UI
+        _cowATK.text = _cowboyInfo.damage.ToString();
 
-    _cowHP.text = _cowboyInfo.health.ToString();
+        _cowHP.text = _cowboyInfo.health.ToString();
 
-    //Android stats UI
-    _andATK.text = _androidInfo.damage.ToString();
+        //Android stats UI
+        _andATK.text = _androidInfo.damage.ToString();
 
-    _andHP.text = _androidInfo.health.ToString();
+        _andHP.text = _androidInfo.health.ToString();
 
     }
     void AttackPopup()
@@ -188,16 +194,16 @@ public class PlayerDeck : MonoBehaviour
         {
             _attackMenu.SetActive(true);
             MoveCardUp();
-           
+
         }
     }
-    
+
     //Attack and Take Damage
     public void Attack()
     {
         if (_isPlayerTurn)
         {
-            
+
             _monster.MonsterTakeDamage(_playerDamage);
             _isPlayerTurn = false;
             MoveCardDown();
@@ -208,7 +214,7 @@ public class PlayerDeck : MonoBehaviour
         }
     }
 
-    
+
 
 
     public void PlayerTakeDamage(int damage)
