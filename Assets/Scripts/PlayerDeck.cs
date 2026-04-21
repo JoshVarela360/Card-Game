@@ -10,9 +10,9 @@ public class PlayerDeck : MonoBehaviour
     //Sript References
     [SerializeField] Monster _monster;
     //Scriptables
-    [SerializeField] private CardInformation _androidInfo;
-    [SerializeField] private CardInformation _cowboyInfo;
-    [SerializeField] private CardInformation _empressInfo;
+    [SerializeField] public CardInformation _androidInfo;
+    [SerializeField] public CardInformation _cowboyInfo;
+    [SerializeField] public CardInformation _empressInfo;
 
     //Cards
     [SerializeField] GameObject _deck;
@@ -27,14 +27,21 @@ public class PlayerDeck : MonoBehaviour
 
     //UI
 
-    [SerializeField] TextMeshProUGUI _popUptext;
     [SerializeField] GameObject _attackMenu;
     [SerializeField] TextMeshProUGUI _totalHealthtext;
+    [SerializeField] TextMeshProUGUI _cowHP;
+    [SerializeField] TextMeshProUGUI _cowATK;
+    [SerializeField] TextMeshProUGUI _empHP;
+    [SerializeField] TextMeshProUGUI _empATK;
+    [SerializeField] TextMeshProUGUI _andHP;
+    [SerializeField] TextMeshProUGUI _andATK;
+
+
 
 
     //Normal Variables
 
-    [SerializeField] string _name;
+    [SerializeField] public string _name;
     [SerializeField] int _playerHealth;
     [SerializeField] string _playerName;
     [SerializeField] int _playerDamage;
@@ -49,12 +56,10 @@ public class PlayerDeck : MonoBehaviour
     void Start()
     {
         _attackMenu.SetActive(false);
-        _androidInfo.health = 20;
-        _cowboyInfo.health = 20;
-        _empressInfo.health = 30;
+        StartingCharacterStats();
         _totalHealth = _androidInfo.health + _cowboyInfo.health + _empressInfo.health;
         _totalHealthtext.text = "Team Health: " + _totalHealth;
-        _deckuplocation = -_deck.GetComponent<RectTransform>().anchoredPosition.y - 50f;
+        _deckuplocation = _deck.GetComponent<RectTransform>().anchoredPosition.y + _moveupdistance;
         _deckdownlocation = _deckuplocation - _moveupdistance;
     }
     void Update()
@@ -62,11 +67,28 @@ public class PlayerDeck : MonoBehaviour
         SelectedCardStats();
 
 
+
+    }
+    void StartingCharacterStats()
+    {
+        if(_androidInfo && _cowboyInfo && _empressInfo == null)
+        {
+         _androidInfo.health = 10;
+        _cowboyInfo.health = 20;
+        _empressInfo.health = 30;
+         _androidInfo.damage = 30;
+        _cowboyInfo.damage= 20;
+        _empressInfo.damage = 10;
+        }
+       
+       
     }
 
+    
     //Selection of Cards
     public void CowboySelected()
     {
+        
         _name = "Cowboy";
 
     }
@@ -123,6 +145,8 @@ public class PlayerDeck : MonoBehaviour
                 _playerName = _empressInfo.name;
                 break;
         }
+        
+
         switch (_name)
         {
             case "Android":
@@ -135,32 +159,45 @@ public class PlayerDeck : MonoBehaviour
 
                 break;
         }
+        
+    UpdateGameStats();
 
-        if (_playerHealth > 0)
-        {
-            GetStats();
-        }
+    //Attack Pop up button
+     AttackPopup();
+    }
+    public void UpdateGameStats()
+    {
+     _empATK.text = _empressInfo.damage.ToString();
 
+    _empHP.text = _empressInfo.health.ToString();
+
+    //Cowboy stats UI
+    _cowATK.text = _cowboyInfo.damage.ToString();
+
+    _cowHP.text = _cowboyInfo.health.ToString();
+
+    //Android stats UI
+    _andATK.text = _androidInfo.damage.ToString();
+
+    _andHP.text = _androidInfo.health.ToString();
 
     }
-    void GetStats()
+    void AttackPopup()
     {
         if (_name == "Android" || _name == "Cowboy" || _name == "Empress")
         {
             _attackMenu.SetActive(true);
             MoveCardUp();
-            _popUptext.text = "Name:" + _playerName;
-            _popUptext.text += "\nHealth:" + _playerHealth;
-            _popUptext.text += "\nDamage:" + _playerDamage;
-
+           
         }
     }
-
+    
     //Attack and Take Damage
     public void Attack()
     {
         if (_isPlayerTurn)
         {
+            
             _monster.MonsterTakeDamage(_playerDamage);
             _isPlayerTurn = false;
             MoveCardDown();
@@ -170,6 +207,9 @@ public class PlayerDeck : MonoBehaviour
             MoveDeckDown();
         }
     }
+
+    
+
 
     public void PlayerTakeDamage(int damage)
     {
@@ -221,7 +261,7 @@ public class PlayerDeck : MonoBehaviour
             if (card.name.Contains(_name))
             {
                 Vector2 tempPos = card.GetComponent<RectTransform>().anchoredPosition;
-                tempPos.y = _deckuplocation + _moveupdistance;
+                tempPos.y += 10;
                 card.GetComponent<RectTransform>().anchoredPosition = tempPos;
 
             }

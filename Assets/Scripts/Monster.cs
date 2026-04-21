@@ -4,7 +4,10 @@ using UnityEngine.InputSystem;
 using TMPro;
 public class Monster : MonoBehaviour
 {
+    public delegate void MonsterDefeated();
+    public static event MonsterDefeated AddCrystal;
     //References
+    [SerializeField] GameObject _mapButton;
     [SerializeField] PlayerDeck _player;
     [SerializeField] Slider _healthBar;
     [SerializeField] TextMeshProUGUI _Healthtext;
@@ -20,6 +23,7 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
+        _MonsterStatustext.text = "Select a Card to Attack!";
         _health = _maxHealth;
         _healthBar.maxValue = _maxHealth;
         _healthBar.value = _health;
@@ -63,6 +67,8 @@ public class Monster : MonoBehaviour
         if (_health <= 0)
         {
             _MonsterStatustext.text = "You Win!!!";
+           AddCrystal?.Invoke();
+            _mapButton.SetActive(true);
             return;
         }
         _isMonsterTurn = true;

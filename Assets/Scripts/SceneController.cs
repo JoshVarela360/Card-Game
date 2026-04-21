@@ -10,7 +10,7 @@ public class SceneController : MonoBehaviour
     
     public void LoadGameScene() 
     {
-        //Debug.Log("Game Scene"); 
         SceneManager.LoadScene("Combat Scene"); 
     } 
+   
 }
