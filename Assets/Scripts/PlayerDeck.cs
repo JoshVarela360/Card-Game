@@ -10,9 +10,9 @@ public class PlayerDeck : MonoBehaviour
     //Sript References
     [SerializeField] Monster _monster;
     //Scriptables
-    [SerializeField] private CardInformation _androidInfo;
-    [SerializeField] private CardInformation _cowboyInfo;
-    [SerializeField] private CardInformation _empressInfo;
+    [SerializeField] public CardInformation _androidInfo;
+    [SerializeField] public CardInformation _cowboyInfo;
+    [SerializeField] public CardInformation _empressInfo;
 
     //Cards
     [SerializeField] GameObject _deck;
@@ -41,7 +41,7 @@ public class PlayerDeck : MonoBehaviour
 
     //Normal Variables
 
-    [SerializeField] string _name;
+    [SerializeField] public string _name;
     [SerializeField] int _playerHealth;
     [SerializeField] string _playerName;
     [SerializeField] int _playerDamage;
@@ -56,9 +56,7 @@ public class PlayerDeck : MonoBehaviour
     void Start()
     {
         _attackMenu.SetActive(false);
-        _androidInfo.health = 20;
-        _cowboyInfo.health = 20;
-        _empressInfo.health = 30;
+        StartingCharacterStats();
         _totalHealth = _androidInfo.health + _cowboyInfo.health + _empressInfo.health;
         _totalHealthtext.text = "Team Health: " + _totalHealth;
         _deckuplocation = _deck.GetComponent<RectTransform>().anchoredPosition.y + _moveupdistance;
@@ -71,10 +69,26 @@ public class PlayerDeck : MonoBehaviour
 
 
     }
+    void StartingCharacterStats()
+    {
+        if(_androidInfo && _cowboyInfo && _empressInfo == null)
+        {
+         _androidInfo.health = 10;
+        _cowboyInfo.health = 20;
+        _empressInfo.health = 30;
+         _androidInfo.damage = 30;
+        _cowboyInfo.damage= 20;
+        _empressInfo.damage = 10;
+        }
+       
+       
+    }
 
+    
     //Selection of Cards
     public void CowboySelected()
     {
+        
         _name = "Cowboy";
 
     }
@@ -146,8 +160,14 @@ public class PlayerDeck : MonoBehaviour
                 break;
         }
         
-//Empress stats UI
-    _empATK.text = _empressInfo.damage.ToString();
+    UpdateGameStats();
+
+    //Attack Pop up button
+     AttackPopup();
+    }
+    public void UpdateGameStats()
+    {
+     _empATK.text = _empressInfo.damage.ToString();
 
     _empHP.text = _empressInfo.health.ToString();
 
@@ -161,8 +181,6 @@ public class PlayerDeck : MonoBehaviour
 
     _andHP.text = _androidInfo.health.ToString();
 
-    //Attack Pop up button
-     AttackPopup();
     }
     void AttackPopup()
     {
@@ -173,7 +191,7 @@ public class PlayerDeck : MonoBehaviour
            
         }
     }
-
+    
     //Attack and Take Damage
     public void Attack()
     {
@@ -243,7 +261,7 @@ public class PlayerDeck : MonoBehaviour
             if (card.name.Contains(_name))
             {
                 Vector2 tempPos = card.GetComponent<RectTransform>().anchoredPosition;
-                tempPos.y = _deckuplocation + _moveupdistance;
+                tempPos.y += 10;
                 card.GetComponent<RectTransform>().anchoredPosition = tempPos;
 
             }
