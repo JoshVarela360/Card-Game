@@ -1763,6 +1763,9 @@ MonoBehaviour:
   _androidInfo: {fileID: 11400000, guid: ba903fbdc8218644e94a4d88267d2d02, type: 2}
   _cowboyInfo: {fileID: 11400000, guid: 9f78046c45ad48048a039d1088b8dac5, type: 2}
   _empressInfo: {fileID: 11400000, guid: f39e877dd04eb9c449a5d1ec0a435b78, type: 2}
+  _androidStartStats: {fileID: 11400000, guid: 3e1ef99cbd0ce441cbb1eb6e503cad8a, type: 2}
+  _cowboyStartStats: {fileID: 11400000, guid: 33a952cd89d5a4cf3bf9a3d180d59dd9, type: 2}
+  _empressStartStats: {fileID: 11400000, guid: 9f0d300b55d284956bca1ddcd1248cc2, type: 2}
   _deck: {fileID: 1538091505}
   PlayerCardObjects:
   - {fileID: 323658367}

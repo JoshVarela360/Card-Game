@@ -14,9 +14,15 @@ public class PlayerDeck : MonoBehaviour
     [SerializeField] public CardInformation _cowboyInfo;
     [SerializeField] public CardInformation _empressInfo;
 
+    //Card starting Stats of each card in this level
+    [SerializeField] public CardInformation _androidStartStats;
+    [SerializeField] public CardInformation _cowboyStartStats;
+    [SerializeField] public CardInformation _empressStartStats;
+
     //Cards
     [SerializeField] GameObject _deck;
     public List<GameObject> PlayerCardObjects = new List<GameObject> { };
+
 
     //Card Positions
     [SerializeField] private float _moveupdistance;
@@ -52,11 +58,16 @@ public class PlayerDeck : MonoBehaviour
     //List of alive cards
     public List<string> PlayerCards = new List<string> { "android", "cowboy", "empress" };
 
+    void Awake()
+    {
+        ResetCardStats();
+    }
+
 
     void Start()
     {
         _attackMenu.SetActive(false);
-        StartingCharacterStats();
+        //StartingCharacterStats();
         _totalHealth = _androidInfo.health + _cowboyInfo.health + _empressInfo.health;
         _totalHealthtext.text = "Team Health: " + _totalHealth;
         _deckuplocation = _deck.GetComponent<RectTransform>().anchoredPosition.y + _moveupdistance;
@@ -65,11 +76,20 @@ public class PlayerDeck : MonoBehaviour
     void Update()
     {
         SelectedCardStats();
+    }
 
-
+    //Reset the card stats to the card datas draged in the inspector of this level
+    void ResetCardStats()
+    {
+        _androidInfo.health = _androidStartStats.health;
+        _cowboyInfo.health = _cowboyStartStats.health;
+        _empressInfo.health = _empressStartStats.health;
+        _androidInfo.damage = _androidStartStats.damage;
+        _cowboyInfo.damage = _cowboyStartStats.damage;
+        _empressInfo.damage = _empressStartStats.damage;
 
     }
-    void StartingCharacterStats()
+    /*void StartingCharacterStats()
     {
         if (_androidInfo && _cowboyInfo && _empressInfo == null)
         {
@@ -81,8 +101,8 @@ public class PlayerDeck : MonoBehaviour
             _empressInfo.damage = 10;
         }
 
-
     }
+    */
 
 
     //Selection of Cards
@@ -160,7 +180,7 @@ public class PlayerDeck : MonoBehaviour
                 break;
         }
 
-        if (_playerHealth > 0)
+        if (_playerHealth > 0) //disable dead cards from attacking
         {
             UpdateGameStats();
 
@@ -267,7 +287,7 @@ public class PlayerDeck : MonoBehaviour
             if (card.name.Contains(_name))
             {
                 Vector2 tempPos = card.GetComponent<RectTransform>().anchoredPosition;
-                tempPos.y += 10;
+                tempPos.y = _deckuplocation + _moveupdistance;
                 card.GetComponent<RectTransform>().anchoredPosition = tempPos;
 
             }
