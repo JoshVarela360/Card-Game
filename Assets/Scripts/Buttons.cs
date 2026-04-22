@@ -8,7 +8,7 @@ public class Buttons : MonoBehaviour
     
     public void StartButton() 
     { 
-        _sceneController.LoadMapScene(); 
+        _sceneController.LoadCutScene1(); 
     } 
     
     public void LevelOneButton() 
