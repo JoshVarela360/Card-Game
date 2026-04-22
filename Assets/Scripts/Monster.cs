@@ -68,15 +68,19 @@ public class Monster : MonoBehaviour
     public void MonsterTakeDamage(int damage)
     {
         _health -= damage;
-        _healthBar.value = _health;
-        _Healthtext.text = "Enemy Health: " + _health;
+
         if (_health <= 0)
         {
+            _health = 0;
+            _healthBar.value = _health;
+            _Healthtext.text = "Enemy Health: " + _health;
             _MonsterStatustext.text = "You Win!!!";
             AddCrystal?.Invoke();
             _mapButton.SetActive(true);
             return;
         }
+        _healthBar.value = _health;
+        _Healthtext.text = "Enemy Health: " + _health;
         _isMonsterTurn = true;
 
 
