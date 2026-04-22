@@ -82,8 +82,6 @@ public class PlayerDeck : MonoBehaviour
     //Reset the card stats to the card datas draged in the inspector of this level
     void ResetCardStats()
     {
-        if(_androidInfo == null)
-        {
 
         _androidInfo.health = _androidStartStats.health;
         _cowboyInfo.health = _cowboyStartStats.health;
@@ -92,8 +90,7 @@ public class PlayerDeck : MonoBehaviour
         _cowboyInfo.damage = _cowboyStartStats.damage;
         _empressInfo.damage = _empressStartStats.damage;
 
-        }
-       
+
 
     }
     /*void StartingCharacterStats()
