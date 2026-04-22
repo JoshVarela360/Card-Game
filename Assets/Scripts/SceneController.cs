@@ -16,6 +16,12 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+    public void LoadCutScene1()
+    {
+
+        SceneManager.LoadScene("Cutscene1");
+
+    }
 
     public void LoadMapScene()
     {
