@@ -84,6 +84,7 @@ public class PlayerDeck : MonoBehaviour
     {
         if(_androidInfo == null)
         {
+
         _androidInfo.health = _androidStartStats.health;
         _cowboyInfo.health = _cowboyStartStats.health;
         _empressInfo.health = _empressStartStats.health;
@@ -254,20 +255,46 @@ public class PlayerDeck : MonoBehaviour
 
         if (randomCard == "android")
         {
-            _androidInfo.health -= damage;
-            _playerHealth = _androidInfo.health;
+            if (_androidInfo.health > damage)
+            {
+                _androidInfo.health -= damage;
+                _playerHealth = _androidInfo.health;
+
+            }
+            else
+            {
+                _androidInfo.health = 0;
+                _playerHealth = _androidInfo.health;
+            }
 
         }
         if (randomCard == "cowboy")
         {
-            _cowboyInfo.health -= damage;
-            _playerHealth = _cowboyInfo.health;
+            if (_cowboyInfo.health > damage)
+            {
+                _cowboyInfo.health -= damage;
+                _playerHealth = _cowboyInfo.health;
+
+            }
+            else
+            {
+                _cowboyInfo.health = 0;
+                _playerHealth = _cowboyInfo.health;
+            }
 
         }
         if (randomCard == "empress")
         {
-            _empressInfo.health -= damage;
-            _playerHealth = _empressInfo.health;
+            if (_empressInfo.health >= damage)
+            {
+                _empressInfo.health -= damage;
+                _playerHealth = _empressInfo.health;
+            }
+            else
+            {
+                _empressInfo.health = 0;
+                _playerHealth = _empressInfo.health;
+            }
         }
 
         //disable the card from future selection if dead
