@@ -58,7 +58,6 @@ public class Monster : MonoBehaviour
                     _MonsterStatustext.text = "You Lose!!!";
                     _mapButton.SetActive(true);
                     _isMonsterTurn = false;
-
                 }
             }
 

@@ -3,6 +3,8 @@ using UnityEngine;
 public class Buttons : MonoBehaviour 
 {
     [SerializeField] private SceneController _sceneController; 
+
+    public GameObject _upgradePanel;
     
     public void StartButton() 
     { 
@@ -11,6 +13,16 @@ public class Buttons : MonoBehaviour
     
     public void LevelOneButton() 
     {
-         _sceneController.LoadGameScene(); 
+         _sceneController.LoadLevelOneScene(); 
     } 
+
+    public void LevelTwoButton()
+    {
+        _sceneController.LoadLevelTwoScene();
+    }
+
+    public void ContinueButton()
+    {
+        _upgradePanel.SetActive(false);
+    }
 }
