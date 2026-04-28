@@ -4,8 +4,11 @@ using UnityEngine.InputSystem;
 using TMPro;
 public class Monster : MonoBehaviour
 {
+    //events
     public delegate void MonsterDefeated();
     public static event MonsterDefeated AddCrystal;
+    public delegate void MonsterAttacked();
+    public static event MonsterAttacked TriggerMonsterAttackSFX;
     //References
     [SerializeField] GameObject _mapButton;
     [SerializeField] PlayerDeck _player;
@@ -47,6 +50,7 @@ public class Monster : MonoBehaviour
 
             if (_attackTimer <= 0.5)
             {
+                TriggerMonsterAttackSFX?.Invoke();
                 _player.PlayerTakeDamage(10);
                 _MonsterStatustext.text = "Attacking!!!";
                 Debug.Log("Monster Attacks!!");
