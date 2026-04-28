@@ -2879,6 +2879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   _monsterattackSFX: {fileID: 609885240}
   _playerattackSFX: {fileID: 609885239}
+  _buttonPressed: {fileID: 0}
 --- !u!4 &609885242
 Transform:
   m_ObjectHideFlags: 0
@@ -3364,7 +3365,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6819a1daf48cc4420bf6ab93ca6327a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b6e677e4e05a84fa99adeb361f90c01b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
