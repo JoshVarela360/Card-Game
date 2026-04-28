@@ -6,6 +6,9 @@ using System.Collections.Generic;
 public class PlayerDeck : MonoBehaviour
 {
 
+    //events
+    public delegate void PlayerAttacks();
+    public static event PlayerAttacks TriggerPlayerAttackSFX;
 
     //Sript References
     [SerializeField] Monster _monster;
@@ -227,7 +230,7 @@ public class PlayerDeck : MonoBehaviour
     {
         if (_isPlayerTurn)
         {
-
+            TriggerPlayerAttackSFX?.Invoke();
             _monster.MonsterTakeDamage(_playerDamage);
             _isPlayerTurn = false;
             MoveCardDown();

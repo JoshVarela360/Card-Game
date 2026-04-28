@@ -14,6 +14,8 @@ public class LocatorScript : MonoBehaviour
     public StatsUpdater StatsManager {get; private set;}
     public Monster MonsterManager {get; private set;}
 
+    public AudioManager AudioManaged {get; private set;}
+
    private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -32,13 +34,16 @@ public class LocatorScript : MonoBehaviour
         GameObject UpgradeManage = GameObject.FindWithTag("GameController");
         UpgradeManager = UpgradeManage.GetComponent<UpgradeSystem>();
 
-        GameObject CardManage = GameObject.FindWithTag("GameController");
-        CardManager = CardManage.GetComponent<CardInformation>();
+        // GameObject CardManage = GameObject.FindWithTag("GameController");
+        // CardManager = CardManage.GetComponent<CardInformation>();
 
         GameObject StatsManage = GameObject.FindWithTag("GameController");
         StatsManager = StatsManage.GetComponent<StatsUpdater>();
 
         GameObject MonsterManage = GameObject.FindWithTag("GameController");
         MonsterManager = MonsterManage.GetComponent<Monster>();
+
+        GameObject AudioManage = GameObject.FindWithTag("AudioManager");
+        AudioManaged = AudioManage.GetComponent<AudioManager>();
     }
 }

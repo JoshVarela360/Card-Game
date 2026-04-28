@@ -2,13 +2,18 @@ using UnityEngine;
 
 public class Buttons : MonoBehaviour 
 {
+
+    //Events
+    public delegate void ButtonPressed();
+    public static event ButtonPressed TriggerButtonSFX;
     [SerializeField] private SceneController _sceneController; 
 
     public GameObject _upgradePanel;
     
     public void StartButton() 
-    { 
-        _sceneController.LoadCutScene1(); 
+    {
+        //Must Create some delay so the button will play audio before transitioning too quickly-> TriggerButtonSFX?.Invoke();
+            _sceneController.LoadCutScene1(); 
     } 
     
     public void LevelOneButton() 
