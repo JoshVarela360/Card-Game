@@ -720,8 +720,9 @@ MonoBehaviour:
   _player: {fileID: 1481589096}
   _healthBar: {fileID: 1899383414}
   _Healthtext: {fileID: 978852734}
+  _MonsterStartStats: {fileID: 11400000, guid: fca875fbd434642d58ca1de3e6af1261, type: 2}
   _health: 0
-  _maxHealth: 100
+  _damage: 0
   _MonsterisAttacked: 0
   _isMonsterTurn: 0
   _MonsterStatustext: {fileID: 811415168}
@@ -4301,6 +4302,7 @@ MonoBehaviour:
   _deckdownlocation: 0
   _attackMenu: {fileID: 675519035}
   _totalHealthtext: {fileID: 1855258775}
+  _healthBar: {fileID: 1811064544}
   _cowHP: {fileID: 126076130}
   _cowATK: {fileID: 429922887}
   _empHP: {fileID: 17812005}
@@ -4362,9 +4364,15 @@ MonoBehaviour:
   _cowUpButt: {fileID: 1481693398}
   _andUpButt: {fileID: 1029128561}
   _empUpButt: {fileID: 429394600}
-  _androidInfo: {fileID: 11400000, guid: ba903fbdc8218644e94a4d88267d2d02, type: 2}
-  _cowboyInfo: {fileID: 11400000, guid: 9f78046c45ad48048a039d1088b8dac5, type: 2}
-  _empressInfo: {fileID: 11400000, guid: f39e877dd04eb9c449a5d1ec0a435b78, type: 2}
+  _androidInfo: {fileID: 11400000, guid: 3e1ef99cbd0ce441cbb1eb6e503cad8a, type: 2}
+  _cowboyInfo: {fileID: 11400000, guid: 33a952cd89d5a4cf3bf9a3d180d59dd9, type: 2}
+  _empressInfo: {fileID: 11400000, guid: 9f0d300b55d284956bca1ddcd1248cc2, type: 2}
+  _cowHP: {fileID: 1951052418}
+  _cowATK: {fileID: 557900045}
+  _empHP: {fileID: 1944123473}
+  _empATK: {fileID: 1526223715}
+  _andHP: {fileID: 588356609}
+  _andATK: {fileID: 1674964435}
   _crystal: {fileID: 11400000, guid: fff8db615f1454ac987134f893fca9d3, type: 2}
 --- !u!114 &1481589100
 MonoBehaviour:
@@ -6144,6 +6152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   _monsterattackSFX: {fileID: 1981698240}
   _playerattackSFX: {fileID: 1981698241}
+  _buttonPressed: {fileID: 0}
 --- !u!4 &1981698239
 Transform:
   m_ObjectHideFlags: 0

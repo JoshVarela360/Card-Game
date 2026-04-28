@@ -38,6 +38,7 @@ public class PlayerDeck : MonoBehaviour
 
     [SerializeField] GameObject _attackMenu;
     [SerializeField] TextMeshProUGUI _totalHealthtext;
+    [SerializeField] Slider _healthBar;
     [SerializeField] TextMeshProUGUI _cowHP;
     [SerializeField] TextMeshProUGUI _cowATK;
     [SerializeField] TextMeshProUGUI _empHP;
@@ -73,6 +74,8 @@ public class PlayerDeck : MonoBehaviour
         //StartingCharacterStats();
         _totalHealth = _androidInfo.health + _cowboyInfo.health + _empressInfo.health;
         _totalHealthtext.text = "Team Health: " + _totalHealth;
+        _healthBar.maxValue = _totalHealth;
+        _healthBar.value = _totalHealth;
         _deckuplocation = _deck.GetComponent<RectTransform>().anchoredPosition.y + _moveupdistance;
         _deckdownlocation = _deckuplocation - _moveupdistance;
         UpdateGameStats();
@@ -200,6 +203,7 @@ public class PlayerDeck : MonoBehaviour
     }
     public void UpdateGameStats()
     {
+        //Emperor stats UI
         _empATK.text = _empressInfo.damage.ToString();
 
         _empHP.text = _empressInfo.health.ToString();
@@ -213,6 +217,10 @@ public class PlayerDeck : MonoBehaviour
         _andATK.text = _androidInfo.damage.ToString();
 
         _andHP.text = _androidInfo.health.ToString();
+
+        //Total Health UI
+        _healthBar.value = _totalHealth;
+
 
     }
     void AttackPopup()
@@ -306,6 +314,8 @@ public class PlayerDeck : MonoBehaviour
         //Update total health text
         _totalHealth -= damage;
         _totalHealthtext.text = "Team Health: " + _totalHealth;
+        //Total Health UI
+        _healthBar.value = _totalHealth;
 
         //Update player health text
         UpdateGameStats();

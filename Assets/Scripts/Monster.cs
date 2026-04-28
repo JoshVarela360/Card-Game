@@ -14,9 +14,10 @@ public class Monster : MonoBehaviour
     [SerializeField] PlayerDeck _player;
     [SerializeField] Slider _healthBar;
     [SerializeField] TextMeshProUGUI _Healthtext;
+    [SerializeField] MonsterInfo _MonsterStartStats;
 
     [SerializeField] int _health;
-    [SerializeField] int _maxHealth = 100;
+    [SerializeField] int _damage;
     [SerializeField] bool _MonsterisAttacked;
     [SerializeField] bool _isMonsterTurn;
     [SerializeField] TextMeshProUGUI _MonsterStatustext;
@@ -26,11 +27,16 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
-        _MonsterStatustext.text = "Select a Card to Attack!";
-        _health = _maxHealth;
-        _healthBar.maxValue = _maxHealth;
+
+        //Get the stats of monster from this level
+        _health = _MonsterStartStats._health;
+        _damage = _MonsterStartStats._damage;
+
+        //Set up health bar
+        _healthBar.maxValue = _health;
         _healthBar.value = _health;
         _Healthtext.text = "Enemy Health: " + _health;
+
         _MonsterStatustext.text = "";
     }
 
@@ -51,7 +57,7 @@ public class Monster : MonoBehaviour
             if (_attackTimer <= 0.5)
             {
                 TriggerMonsterAttackSFX?.Invoke();
-                _player.PlayerTakeDamage(10);
+                _player.PlayerTakeDamage(_damage);
                 _MonsterStatustext.text = "Attacking!!!";
                 Debug.Log("Monster Attacks!!");
                 _isMonsterTurn = false;

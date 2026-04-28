@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using TMPro;
 public class UpgradeSystem : MonoBehaviour
 {
 
@@ -15,6 +15,14 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] public CardInformation _cowboyInfo;
     [SerializeField] public CardInformation _empressInfo;
 
+    //CardGUI
+    [SerializeField] TextMeshProUGUI _cowHP;
+    [SerializeField] TextMeshProUGUI _cowATK;
+    [SerializeField] TextMeshProUGUI _empHP;
+    [SerializeField] TextMeshProUGUI _empATK;
+    [SerializeField] TextMeshProUGUI _andHP;
+    [SerializeField] TextMeshProUGUI _andATK;
+
 
     //variables - SWITCH TO A SCRIPTABLE OBJECT
 
@@ -25,6 +33,26 @@ public class UpgradeSystem : MonoBehaviour
     void Start()
     {
         Monster.AddCrystal += IncreaseCrystals;
+        UpdateGameStats();
+
+    }
+
+    public void UpdateGameStats()
+    {
+        //Emperor stats UI
+        _empATK.text = _empressInfo.damage.ToString();
+
+        _empHP.text = _empressInfo.health.ToString();
+
+        //Cowboy stats UI
+        _cowATK.text = _cowboyInfo.damage.ToString();
+
+        _cowHP.text = _cowboyInfo.health.ToString();
+
+        //Android stats UI
+        _andATK.text = _androidInfo.damage.ToString();
+
+        _andHP.text = _androidInfo.health.ToString();
 
     }
     // Update is called once per frame
@@ -48,6 +76,7 @@ public class UpgradeSystem : MonoBehaviour
             --_crystal._number;
             Debug.Log("work");
             _cowUpButt.SetActive(false);
+            UpdateGameStats();
         }
 
 
@@ -62,6 +91,7 @@ public class UpgradeSystem : MonoBehaviour
             --_crystal._number;
             _empUpButt.SetActive(false);
             Debug.Log("work");
+            UpdateGameStats();
         }
 
     }
@@ -74,6 +104,7 @@ public class UpgradeSystem : MonoBehaviour
             --_crystal._number;
             _andUpButt.SetActive(false);
             Debug.Log("work");
+            UpdateGameStats();
         }
 
 
