@@ -4,6 +4,8 @@ public class SceneController : MonoBehaviour
 {
     public GameObject lvlOneGlow;
     public GameObject lvlTwoGlow;
+    public GameObject lvlThreeGlow;
+    public GameObject lvlBossGlow;
 
     private static string _previousSceneName = "";
     
@@ -44,20 +46,36 @@ public class SceneController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
     {
-            // resets both to be null
-            if (lvlOneGlow != null) lvlOneGlow.SetActive(false);
-            if (lvlTwoGlow != null) lvlTwoGlow.SetActive(false);
+        // resets both to be null
+        if (lvlOneGlow != null) lvlOneGlow.SetActive(false);
+        if (lvlTwoGlow != null) lvlTwoGlow.SetActive(false);
 
-            // shows levelOneGlow only if coming from StartScene
-            if (_previousSceneName == "StartScene")
-            {
-                if (lvlOneGlow != null) lvlOneGlow.SetActive(true);
-            }
-            
-            // shows levelTwoGlow only if coming from LevelOne
-            else if (_previousSceneName == "LevelOne")
-            {
-                if (lvlTwoGlow != null) lvlTwoGlow.SetActive(true);
-            }
+        // shows levelOneGlow only if coming from StartScene
+        if (_previousSceneName == "Cutscene1")
+        {
+            if (lvlOneGlow != null) lvlOneGlow.SetActive(true);
+        }
+        
+        // shows levelTwoGlow only if coming from LevelOne
+        else if (_previousSceneName == "LevelOne")
+        {
+            if (lvlBossGlow != null) lvlBossGlow.SetActive(true);
+        }
+
+        // // shows levelTwoGlow only if coming from LevelOne
+        // else if (_previousSceneName == "LevelOne")
+        // {
+        //     if (lvlTwoGlow != null) lvlTwoGlow.SetActive(true);
+        // }
+
+        // else if (_previousSceneName == "LevelTwo")
+        // {
+        //     if (lvlThreeGlow != null) lvlThreeGlow.SetActive(true);
+        // }
+
+        // else if (_previousSceneName == "LevelThree")
+        // {
+        //     if (lvlBossGlow != null) lvlBossGlow.SetActive(true);
+        // }
     }
 }
