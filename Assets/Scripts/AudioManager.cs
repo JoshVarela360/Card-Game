@@ -3,14 +3,17 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    
+
     [SerializeField] AudioSource _monsterattackSFX;
     [SerializeField] AudioSource _playerattackSFX;
     [SerializeField] AudioSource _buttonPressed;
 
 
+
+
 void Start()
     {
+       
         Monster.TriggerMonsterAttackSFX += MonsterAttackAudio;
         PlayerDeck.TriggerPlayerAttackSFX += PlayerAttackAudio;
         Buttons.TriggerButtonSFX += ButtonClickSFX;
