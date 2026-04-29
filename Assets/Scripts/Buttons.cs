@@ -11,6 +11,7 @@ public class Buttons : MonoBehaviour
     public AudioSource buttonClickSound;
 
     public GameObject _upgradePanel;
+    public GameObject _endGamePanel;
     
 
     public void StartButton() 
@@ -37,7 +38,7 @@ public class Buttons : MonoBehaviour
     
     public void LevelOneButton() 
     {
-         _sceneController.LoadLevelOneScene(); 
+        _sceneController.LoadLevelOneScene(); 
     } 
 
     public void LevelTwoButton()
@@ -50,5 +51,10 @@ public class Buttons : MonoBehaviour
     public void ContinueButton()
     {
         _upgradePanel.SetActive(false);
+    }
+
+    public void XButton()
+    {
+        _endGamePanel.SetActive(false);
     }
 }

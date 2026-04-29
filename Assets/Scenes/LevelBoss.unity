@@ -435,6 +435,7 @@ MonoBehaviour:
   _sceneController: {fileID: 0}
   buttonClickSound: {fileID: 0}
   _upgradePanel: {fileID: 326586325}
+  _endGamePanel: {fileID: 0}
 --- !u!114 &129465701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3178,12 +3179,12 @@ GameObject:
   - component: {fileID: 1026436537}
   - component: {fileID: 1026436536}
   m_Layer: 5
-  m_Name: Map Button
+  m_Name: Back to Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1026436535
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3201,8 +3202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 801.46, y: -455.122}
-  m_SizeDelta: {x: 94.425, y: 67.144}
+  m_AnchoredPosition: {x: 730.3902, y: -455.122}
+  m_SizeDelta: {x: 160.564, y: 67.144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1026436536
 MonoBehaviour:
@@ -3250,7 +3251,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1481589098}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: LoadMapScene
+        m_MethodName: LoadStartScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4426,7 +4427,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Back to Map
+  m_text: Back to Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4b92c6a8a1fe319439287ce48de6db04, type: 2}
   m_sharedMaterial: {fileID: -1670277217314047417, guid: 4b92c6a8a1fe319439287ce48de6db04, type: 2}
@@ -4612,10 +4613,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57b49eabd76934acd96ea9b22e98a15c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneController
+  _buttons: {fileID: 0}
   lvlOneGlow: {fileID: 0}
   lvlTwoGlow: {fileID: 0}
   lvlThreeGlow: {fileID: 0}
   lvlBossGlow: {fileID: 0}
+  endGamePanel: {fileID: 0}
 --- !u!114 &1481589099
 MonoBehaviour:
   m_ObjectHideFlags: 0
