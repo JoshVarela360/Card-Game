@@ -88,6 +88,8 @@ public class PlayerDeck : MonoBehaviour
         Debug.Log("Android: " + _androidInfo.health);
         Debug.Log("Cowboy: " + _cowboyInfo.health);
         Debug.Log("Empress: " + _empressInfo.health);
+
+        isGameOver = false;
     }
     
     void Update()
@@ -354,8 +356,6 @@ public class PlayerDeck : MonoBehaviour
         {
             Debug.Log("Disable the character: " + randomCard);
             PlayerCards.Remove(randomCard);
-
-            PlayerLose();
         }
         //Update total health text
         /*_totalHealth -= damage;*/
@@ -363,6 +363,8 @@ public class PlayerDeck : MonoBehaviour
         if (_totalHealth < 0)
         {
             _totalHealth = 0;
+
+            PlayerLose();
         }
         _totalHealthtext.text = "Team Health: " + _totalHealth;
         //Total Health UI
