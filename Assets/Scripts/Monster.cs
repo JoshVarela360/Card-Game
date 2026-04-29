@@ -15,6 +15,7 @@ public class Monster : MonoBehaviour
     [SerializeField] Slider _healthBar;
     [SerializeField] TextMeshProUGUI _Healthtext;
     [SerializeField] MonsterInfo _MonsterStartStats;
+    [SerializeField] private int _crystalReward = 1;
 
     [SerializeField] int _health;
     [SerializeField] int _damage;
@@ -85,7 +86,10 @@ public class Monster : MonoBehaviour
             _healthBar.value = _health;
             _Healthtext.text = "Enemy Health: " + _health;
             _MonsterStatustext.text = "You Win!!!";
-            AddCrystal?.Invoke();
+            for (int i = 0; i < _crystalReward; i++)
+            {
+                AddCrystal?.Invoke();
+            }
             _mapButton.SetActive(true);
             return;
         }

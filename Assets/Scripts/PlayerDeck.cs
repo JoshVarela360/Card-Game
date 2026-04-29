@@ -32,7 +32,8 @@ public class PlayerDeck : MonoBehaviour
     [SerializeField] private float _deckdownlocation;
     private float _deckuplocation;
 
-
+    //Card Quips
+    [SerializeField] DialogueUI _dialogueUI;
 
     //UI
 
@@ -83,7 +84,12 @@ public class PlayerDeck : MonoBehaviour
         _deckuplocation = _deck.GetComponent<RectTransform>().anchoredPosition.y + _moveupdistance;
         _deckdownlocation = _deckuplocation - _moveupdistance;
         UpdateGameStats();
+
+        Debug.Log("Android: " + _androidInfo.health);
+        Debug.Log("Cowboy: " + _cowboyInfo.health);
+        Debug.Log("Empress: " + _empressInfo.health);
     }
+    
     void Update()
     {
         SelectedCardStats();
@@ -124,18 +130,23 @@ public class PlayerDeck : MonoBehaviour
     //Selection of Cards
     public void CowboySelected()
     {
-
+        if (!PlayerCards.Contains("cowboy")) return;
         _name = "Cowboy";
+        _dialogueUI.ShowDialogue(_cowboyInfo.quip);
 
     }
     public void EmpressSelected()
     {
+        if (!PlayerCards.Contains("empress")) return;
         _name = "Empress";
+        _dialogueUI.ShowDialogue(_empressInfo.quip);
 
     }
     public void AndroidSelected()
     {
+        if (!PlayerCards.Contains("android")) return;
         _name = "Android";
+        _dialogueUI.ShowDialogue(_androidInfo.quip);
 
     }
 
@@ -255,13 +266,40 @@ public class PlayerDeck : MonoBehaviour
         }
     }
 
+    bool IsCardAlive(string cardName)
+    {
+        return PlayerCards.Contains(cardName.ToLower());
+    }
 
+    //Card Quip
+    void ShowCardQuip()
+    {   
+        if (_name == null) return;
+
+        if (!IsCardAlive(_name))
+        return;
+
+        switch (_name)
+        {
+            case "Cowboy":
+                _dialogueUI.ShowDialogue(_cowboyInfo.quip);
+                break;
+
+            case "Empress":
+                _dialogueUI.ShowDialogue(_empressInfo.quip);
+                break;
+
+            case "Android":
+                _dialogueUI.ShowDialogue(_androidInfo.quip);
+                break;
+        }
+    }
 
 
     public void PlayerTakeDamage(int damage)
     {
 
-
+        _dialogueUI.HideDialogue();
         //randomly select from alive player card list 
         int randomIndex = Random.Range(0, PlayerCards.Count);
         string randomCard = PlayerCards[randomIndex];
@@ -320,7 +358,12 @@ public class PlayerDeck : MonoBehaviour
             PlayerLose();
         }
         //Update total health text
-        _totalHealth -= damage;
+        /*_totalHealth -= damage;*/
+        RecalculateTotalHealth();
+        if (_totalHealth < 0)
+        {
+            _totalHealth = 0;
+        }
         _totalHealthtext.text = "Team Health: " + _totalHealth;
         //Total Health UI
         _healthBar.value = _totalHealth;
@@ -332,6 +375,17 @@ public class PlayerDeck : MonoBehaviour
         _isPlayerTurn = true;
         MoveDeckUp();
 
+    }
+
+    void RecalculateTotalHealth()
+    {
+        _totalHealth =
+            _androidInfo.health +
+            _cowboyInfo.health +
+            _empressInfo.health;
+
+        _totalHealthtext.text = "Team Health: " + _totalHealth;
+        _healthBar.value = _totalHealth;
     }
 
     void MoveCardUp()

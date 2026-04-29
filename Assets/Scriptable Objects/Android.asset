@@ -15,3 +15,4 @@ MonoBehaviour:
   cardName: Android
   damage: 30
   health: 10
+  quip: Calculating attack...
