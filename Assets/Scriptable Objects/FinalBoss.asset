@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e88ba7aa52449d0980ff5cf8dd6772, type: 3}
   m_Name: FinalBoss
   m_EditorClassIdentifier: Assembly-CSharp::MonsterInfo
-  _health: 300
-  _damage: 30
+  _health: 150
+  _damage: 20
