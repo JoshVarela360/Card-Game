@@ -59,12 +59,16 @@ public class PlayerDeck : MonoBehaviour
     [SerializeField] bool _isPlayerTurn = true;
     [SerializeField] public int _totalHealth;
 
+    public static bool isGameOver = false;
+
     //List of alive cards
     public List<string> PlayerCards = new List<string> { "android", "cowboy", "empress" };
 
     void Awake()
     {
         ResetCardStats();
+
+        isGameOver = false;
     }
 
 
@@ -83,6 +87,8 @@ public class PlayerDeck : MonoBehaviour
     void Update()
     {
         SelectedCardStats();
+
+        UpdateGameStats();
     }
 
     //Reset the card stats to the card datas draged in the inspector of this level
@@ -310,6 +316,8 @@ public class PlayerDeck : MonoBehaviour
         {
             Debug.Log("Disable the character: " + randomCard);
             PlayerCards.Remove(randomCard);
+
+            PlayerLose();
         }
         //Update total health text
         _totalHealth -= damage;
@@ -379,7 +387,12 @@ public class PlayerDeck : MonoBehaviour
 
     }
 
+    void PlayerLose()
+    {
+        isGameOver = true;
 
+        Debug.Log(isGameOver);
+    }
 
 
 

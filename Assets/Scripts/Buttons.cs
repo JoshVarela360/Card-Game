@@ -8,6 +8,7 @@ public class Buttons : MonoBehaviour
     public delegate void ButtonPressed();
     public static event ButtonPressed TriggerButtonSFX;
     [SerializeField] private SceneController _sceneController; 
+    
     public AudioSource buttonClickSound;
 
     public GameObject _upgradePanel;
@@ -65,7 +66,7 @@ public class Buttons : MonoBehaviour
     public void ContinueButton()
     {
         buttonClickSound.Play();
-        
+
         _upgradePanel.SetActive(false);
     }
 
