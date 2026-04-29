@@ -2,10 +2,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
+    [SerializeField] Buttons _buttons;
     public GameObject lvlOneGlow;
     public GameObject lvlTwoGlow;
     public GameObject lvlThreeGlow;
     public GameObject lvlBossGlow;
+    public GameObject endGamePanel;
 
     private static string _previousSceneName = "";
     
@@ -50,6 +52,11 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("LevelBoss");
     }
 
+    public void LoadStartScene()
+    {
+        _previousSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("StartScene");
+    }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
     {
         // resets both to be null
@@ -69,6 +76,10 @@ public class SceneController : MonoBehaviour
             if (lvlTwoGlow != null) lvlTwoGlow.SetActive(true);
         }
 
+        else if (_previousSceneName == "LevelBoss")
+        {
+            if (endGamePanel != null) endGamePanel.SetActive(true);
+        }
         // else if (_previousSceneName == "LevelTwo")
         // {
         //     if (lvlThreeGlow != null) lvlThreeGlow.SetActive(true);
