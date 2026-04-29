@@ -6,6 +6,6 @@ public class CardInformation : ScriptableObject
     public string cardName;
     public int damage;
     public int health;
-
+    public string quip;
    
 }

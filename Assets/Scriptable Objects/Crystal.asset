@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731730d1a80f84685b0173a97fb0bdb7, type: 3}
   m_Name: Crystal
   m_EditorClassIdentifier: Assembly-CSharp::Crystal
-  _number: 0
+  _number: 3
