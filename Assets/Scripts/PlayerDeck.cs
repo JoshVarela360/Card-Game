@@ -91,7 +91,7 @@ public class PlayerDeck : MonoBehaviour
 
         isGameOver = false;
     }
-    
+
     void Update()
     {
         SelectedCardStats();
@@ -100,7 +100,7 @@ public class PlayerDeck : MonoBehaviour
     }
 
     //Reset the card stats to the card datas draged in the inspector of this level
-    void ResetCardStats()
+    public void ResetCardStats()
     {
 
         _androidInfo.health = _androidStartStats.health;
@@ -109,8 +109,6 @@ public class PlayerDeck : MonoBehaviour
         _androidInfo.damage = _androidStartStats.damage;
         _cowboyInfo.damage = _cowboyStartStats.damage;
         _empressInfo.damage = _empressStartStats.damage;
-
-
 
     }
     /*void StartingCharacterStats()
@@ -275,11 +273,11 @@ public class PlayerDeck : MonoBehaviour
 
     //Card Quip
     void ShowCardQuip()
-    {   
+    {
         if (_name == null) return;
 
         if (!IsCardAlive(_name))
-        return;
+            return;
 
         switch (_name)
         {
