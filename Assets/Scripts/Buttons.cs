@@ -23,7 +23,9 @@ public class Buttons : MonoBehaviour
 
     public void LevelTwoButton()
     {
-        _sceneController.LoadLevelTwoScene();
+        _sceneController.LoadLevelBossScene();
+
+        //_sceneController.LoadLevelTwoScene();
     }
 
     public void ContinueButton()

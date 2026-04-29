@@ -44,6 +44,12 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("LevelTwo");
     }
 
+    public void LoadLevelBossScene()
+    {
+        _previousSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("LevelBoss");
+    }
+
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
     {
         // resets both to be null
@@ -56,17 +62,12 @@ public class SceneController : MonoBehaviour
             if (lvlOneGlow != null) lvlOneGlow.SetActive(true);
         }
         
+
         // shows levelTwoGlow only if coming from LevelOne
         else if (_previousSceneName == "LevelOne")
         {
-            if (lvlBossGlow != null) lvlBossGlow.SetActive(true);
+            if (lvlTwoGlow != null) lvlTwoGlow.SetActive(true);
         }
-
-        // // shows levelTwoGlow only if coming from LevelOne
-        // else if (_previousSceneName == "LevelOne")
-        // {
-        //     if (lvlTwoGlow != null) lvlTwoGlow.SetActive(true);
-        // }
 
         // else if (_previousSceneName == "LevelTwo")
         // {
