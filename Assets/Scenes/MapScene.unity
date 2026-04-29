@@ -493,7 +493,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380851499}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64a3b2eb07051e64eba8cead98d46142, type: 3}
   m_Name: 
@@ -505,6 +505,12 @@ MonoBehaviour:
   _androidInfo: {fileID: 11400000, guid: 3e1ef99cbd0ce441cbb1eb6e503cad8a, type: 2}
   _cowboyInfo: {fileID: 11400000, guid: 33a952cd89d5a4cf3bf9a3d180d59dd9, type: 2}
   _empressInfo: {fileID: 11400000, guid: 9f0d300b55d284956bca1ddcd1248cc2, type: 2}
+  _cowHP: {fileID: 0}
+  _cowATK: {fileID: 0}
+  _empHP: {fileID: 0}
+  _empATK: {fileID: 0}
+  _andHP: {fileID: 0}
+  _andATK: {fileID: 0}
   _crystal: {fileID: 11400000, guid: fff8db615f1454ac987134f893fca9d3, type: 2}
 --- !u!4 &380851501
 Transform:
@@ -550,6 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttons
   _sceneController: {fileID: 380851502}
+  buttonClickSound: {fileID: 0}
   _upgradePanel: {fileID: 0}
 --- !u!114 &380851504
 MonoBehaviour:
