@@ -1524,6 +1524,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneController
   lvlOneGlow: {fileID: 0}
   lvlTwoGlow: {fileID: 0}
+  lvlThreeGlow: {fileID: 0}
+  lvlBossGlow: {fileID: 0}
 --- !u!114 &1613367835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,7 +1539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttons
   _sceneController: {fileID: 1613367834}
-  _timer: 0
+  buttonClickSound: {fileID: 442355392}
   _upgradePanel: {fileID: 0}
 --- !u!95 &1613367836
 Animator:
