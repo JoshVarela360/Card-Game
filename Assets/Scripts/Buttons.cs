@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Buttons : MonoBehaviour 
 {
@@ -7,14 +8,32 @@ public class Buttons : MonoBehaviour
     public delegate void ButtonPressed();
     public static event ButtonPressed TriggerButtonSFX;
     [SerializeField] private SceneController _sceneController; 
+    public AudioSource buttonClickSound;
 
     public GameObject _upgradePanel;
     
+
     public void StartButton() 
     {
-        //Must Create some delay so the button will play audio before transitioning too quickly-> TriggerButtonSFX?.Invoke();
-            _sceneController.LoadCutScene1(); 
+        StartCoroutine(StartButtonRoutine());
     } 
+
+    private IEnumerator StartButtonRoutine() 
+    {
+        buttonClickSound.Play();
+
+        yield return new WaitForSeconds(buttonClickSound.clip.length);
+        
+        _sceneController.LoadCutScene1(); 
+    } 
+
+    // public void StartButton() 
+    // {
+    //     buttonClickSound.Play();
+    //     yield return new WaitForSeconds(buttonClickSound.clip.length);
+    //     //Must Create some delay so the button will play audio before transitioning too quickly-> TriggerButtonSFX?.Invoke();
+    //     _sceneController.LoadCutScene1(); 
+    // } 
     
     public void LevelOneButton() 
     {
