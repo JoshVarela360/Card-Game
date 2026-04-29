@@ -28,28 +28,44 @@ public class Buttons : MonoBehaviour
         _sceneController.LoadCutScene1(); 
     } 
 
-    // public void StartButton() 
-    // {
-    //     buttonClickSound.Play();
-    //     yield return new WaitForSeconds(buttonClickSound.clip.length);
-    //     //Must Create some delay so the button will play audio before transitioning too quickly-> TriggerButtonSFX?.Invoke();
-    //     _sceneController.LoadCutScene1(); 
-    // } 
-    
     public void LevelOneButton() 
     {
-        _sceneController.LoadLevelOneScene(); 
-    } 
+        StartCoroutine(LevelOneButtonRoutine());
+    }
+
+    private IEnumerator LevelOneButtonRoutine()
+    {
+        buttonClickSound.Play();
+
+        yield return new WaitForSeconds(buttonClickSound.clip.length);
+       
+        _sceneController.LoadLevelOneScene();
+  
+    }
+     
 
     public void LevelTwoButton()
     {
-        _sceneController.LoadLevelBossScene();
+        StartCoroutine(LevelBossButtonRoutine());
+
+        //_sceneController.LoadLevelBossScene();
 
         //_sceneController.LoadLevelTwoScene();
     }
 
+    private IEnumerator LevelBossButtonRoutine()
+    {
+        buttonClickSound.Play();
+
+        yield return new WaitForSeconds(buttonClickSound.clip.length);
+       
+        _sceneController.LoadLevelBossScene();
+    }
+
     public void ContinueButton()
     {
+        buttonClickSound.Play();
+        
         _upgradePanel.SetActive(false);
     }
 
