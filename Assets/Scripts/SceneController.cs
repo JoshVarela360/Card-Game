@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
+    //[SerializeField] PlayerDeck _playerDeck;
     [SerializeField] Buttons _buttons;
     public GameObject lvlOneGlow;
     public GameObject lvlTwoGlow;
@@ -73,7 +74,14 @@ public class SceneController : MonoBehaviour
         // shows levelTwoGlow only if coming from LevelOne
         else if (_previousSceneName == "LevelOne")
         {
-            if (lvlTwoGlow != null) lvlTwoGlow.SetActive(true);
+            if (PlayerDeck.isGameOver == false)
+            {
+                if (lvlTwoGlow != null) lvlTwoGlow.SetActive(true);
+            }
+            else
+            {
+                if (lvlOneGlow != null) lvlOneGlow.SetActive(true);
+            }
         }
 
         else if (_previousSceneName == "LevelBoss")
