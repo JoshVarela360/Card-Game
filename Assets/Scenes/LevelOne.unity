@@ -1369,7 +1369,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1481589099}
         m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
         m_MethodName: UpgradeEmpressStats
         m_Mode: 1
@@ -2192,9 +2192,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
-        m_MethodName: CloseUpgradeUI
+      - m_Target: {fileID: 1481589098}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadMapScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3252,7 +3252,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1481589099}
         m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
         m_MethodName: UpgradeAndroidStats
         m_Mode: 1
@@ -4348,6 +4348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneController
   lvlOneGlow: {fileID: 0}
   lvlTwoGlow: {fileID: 0}
+  lvlThreeGlow: {fileID: 0}
+  lvlBossGlow: {fileID: 0}
 --- !u!114 &1481589099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4469,7 +4471,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1481589099}
         m_TargetAssemblyTypeName: UpgradeSystem, Assembly-CSharp
         m_MethodName: UpgradeCowboyStats
         m_Mode: 1
