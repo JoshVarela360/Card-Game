@@ -5,7 +5,7 @@ using TMPro;
 public class Monster : MonoBehaviour
 {
     //events
-    public delegate void MonsterDefeated();
+    public delegate void MonsterDefeated(int amount);
     public static event MonsterDefeated AddCrystal;
     public delegate void MonsterAttacked();
     public static event MonsterAttacked TriggerMonsterAttackSFX;
@@ -14,6 +14,8 @@ public class Monster : MonoBehaviour
     [SerializeField] PlayerDeck _player;
     [SerializeField] Slider _healthBar;
     [SerializeField] TextMeshProUGUI _Healthtext;
+    [SerializeField] TextMeshProUGUI _monsterHPText;
+    [SerializeField] TextMeshProUGUI _monsterATKText;
     [SerializeField] MonsterInfo _MonsterStartStats;
     [SerializeField] private int _crystalReward = 1;
 
@@ -37,6 +39,9 @@ public class Monster : MonoBehaviour
         _healthBar.maxValue = _health;
         _healthBar.value = _health;
         _Healthtext.text = "Enemy Health: " + _health;
+
+        _monsterHPText.text = _health.ToString();
+        _monsterATKText.text = _damage.ToString();
 
         _MonsterStatustext.text = "";
     }
@@ -76,7 +81,7 @@ public class Monster : MonoBehaviour
     }
 
 
-    public void MonsterTakeDamage(int damage)
+    /*public void MonsterTakeDamage(int damage)
     {
         _health -= damage;
 
@@ -85,6 +90,7 @@ public class Monster : MonoBehaviour
             _health = 0;
             _healthBar.value = _health;
             _Healthtext.text = "Enemy Health: " + _health;
+            _monsterHPText.text = _health.ToString();
             _MonsterStatustext.text = "You Win!!!";
             for (int i = 0; i < _crystalReward; i++)
             {
@@ -98,5 +104,28 @@ public class Monster : MonoBehaviour
         _isMonsterTurn = true;
 
 
+    }*/
+
+    public void MonsterTakeDamage(int damage)
+    {
+        _health -= damage;
+
+        if (_health < 0)
+            _health = 0;
+
+        // Update EVERY hit
+        _healthBar.value = _health;
+        _Healthtext.text = "Enemy Health: " + _health;
+        _monsterHPText.text = _health.ToString();
+
+        if (_health <= 0)
+        {
+            _MonsterStatustext.text = "You Win!!!";
+            AddCrystal?.Invoke(_crystalReward);
+            _mapButton.SetActive(true);
+            return;
+        }
+
+        _isMonsterTurn = true;
     }
 }

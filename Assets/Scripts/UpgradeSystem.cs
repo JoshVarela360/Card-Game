@@ -110,8 +110,8 @@ public class UpgradeSystem : MonoBehaviour
 
 
     }
-    public void IncreaseCrystals()
+    public void IncreaseCrystals(int amount)
     {
-        _crystal._number++;
+        _crystal._number += amount;
     }
 }
