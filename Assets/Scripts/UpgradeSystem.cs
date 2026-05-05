@@ -75,8 +75,11 @@ public class UpgradeSystem : MonoBehaviour
             _cowboyInfo.health += 10;
             --_crystal._number;
             Debug.Log("work");
-            _cowUpButt.SetActive(false);
             UpdateGameStats();
+            if (_crystal._number == 0)
+            {
+                _cowUpButt.SetActive(false);
+            }
         }
 
 
@@ -89,9 +92,12 @@ public class UpgradeSystem : MonoBehaviour
             _empressInfo.damage += 10;
             _empressInfo.health += 10;
             --_crystal._number;
-            _empUpButt.SetActive(false);
             Debug.Log("work");
             UpdateGameStats();
+            if (_crystal._number == 0)
+            {
+                _empUpButt.SetActive(false);
+            }
         }
 
     }
@@ -102,9 +108,12 @@ public class UpgradeSystem : MonoBehaviour
             _androidInfo.damage += 10;
             _androidInfo.health += 10;
             --_crystal._number;
-            _andUpButt.SetActive(false);
             Debug.Log("work");
             UpdateGameStats();
+            if (_crystal._number == 0)
+            {
+                _andUpButt.SetActive(false);
+            }
         }
 
 
