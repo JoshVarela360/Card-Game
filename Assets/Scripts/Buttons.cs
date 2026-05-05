@@ -14,7 +14,7 @@ public class Buttons : MonoBehaviour
     public GameObject _upgradePanel;
     public GameObject _endGamePanel;
 
-
+    // StartButton all
     public void StartButton()
     {
         StartCoroutine(StartButtonRoutine());
@@ -29,6 +29,7 @@ public class Buttons : MonoBehaviour
         _sceneController.LoadCutScene1();
     }
 
+    // LevelOneButton all
     public void LevelOneButton()
     {
         StartCoroutine(LevelOneButtonRoutine());
@@ -44,14 +45,40 @@ public class Buttons : MonoBehaviour
 
     }
 
-
+    // LevelTwoButton all
     public void LevelTwoButton()
     {
+        StartCoroutine(LevelTwoButtonRoutine());
+    }
+
+    private IEnumerator LevelTwoButtonRoutine()
+    {
+        buttonClickSound.Play();
+
+        yield return new WaitForSeconds(buttonClickSound.clip.length);
+
+        _sceneController.LoadLevelTwoScene();
+    }
+
+    // LevelThreeButton all
+    public void LevelThreeButton()
+    {
+        StartCoroutine(LevelThreeButtonRoutine());
+    }
+
+    private IEnumerator LevelThreeButtonRoutine()
+    {
+        buttonClickSound.Play();
+
+        yield return new WaitForSeconds(buttonClickSound.clip.length);
+
+        _sceneController.LoadLevelThreeScene();
+    }
+
+    // LevelBossButton all
+    public void LevelBossButton()
+    {
         StartCoroutine(LevelBossButtonRoutine());
-
-        //_sceneController.LoadLevelBossScene();
-
-        //_sceneController.LoadLevelTwoScene();
     }
 
     private IEnumerator LevelBossButtonRoutine()
@@ -63,6 +90,21 @@ public class Buttons : MonoBehaviour
         _sceneController.LoadLevelBossScene();
     }
 
+    // MapButton all
+    public void MapButton()
+    {
+        StartCoroutine(MapButtonRoutine());
+    }
+
+    private IEnumerator MapButtonRoutine()
+    {
+        buttonClickSound.Play();
+
+        yield return new WaitForSeconds(buttonClickSound.clip.length);
+
+        _sceneController.LoadMapScene();
+    }
+
     public void ContinueButton()
     {
         buttonClickSound.Play();
@@ -72,6 +114,13 @@ public class Buttons : MonoBehaviour
 
     public void XButton()
     {
+        buttonClickSound.Play();
         _endGamePanel.SetActive(false);
     }
+
+    // // test
+    // public void SkipToMapButton()
+    // {
+    //     _sceneController.LoadMapScene();
+    // }
 }

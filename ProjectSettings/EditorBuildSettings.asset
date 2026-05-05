@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Josh Deck testing.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: 1dc048b22428c49c1a4d0f8f483ca9d0
+  - enabled: 1
     path: Assets/Scenes/LevelTwo.unity
-    guid: d083a05b8bba04f8ba5c302475d51024
+    guid: 326fa6f2fd47d4b5d8d9a335f3990f14
   - enabled: 1
     path: Assets/Scenes/LevelOne.unity
     guid: cc98b5b7400e340cabc1b69c47059530
