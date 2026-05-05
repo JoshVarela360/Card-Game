@@ -17,7 +17,7 @@ public class Monster : MonoBehaviour
     [SerializeField] TextMeshProUGUI _monsterHPText;
     [SerializeField] TextMeshProUGUI _monsterATKText;
     [SerializeField] MonsterInfo _MonsterStartStats;
-    [SerializeField] private int _crystalReward = 1;
+    [SerializeField] private int _crystalReward;
 
     [SerializeField] int _health;
     [SerializeField] int _damage;
@@ -34,6 +34,7 @@ public class Monster : MonoBehaviour
         //Get the stats of monster from this level
         _health = _MonsterStartStats._health;
         _damage = _MonsterStartStats._damage;
+        _crystalReward = _MonsterStartStats._crystal;
 
         //Set up health bar
         _healthBar.maxValue = _health;

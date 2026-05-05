@@ -6,4 +6,6 @@ public class MonsterInfo : ScriptableObject
     public int _health;
     public int _damage;
 
+    public int _crystal;
+
 }
