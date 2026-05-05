@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41b5d7e427c1a2c4392e635f79208014, type: 3}
-  m_Name: CowboyStartStats
-  m_EditorClassIdentifier: Assembly-CSharp::CardInformation
-  cardName: Cowboy
-  damage: 20
-  health: 20
-  quip: 
+  m_Script: {fileID: 11500000, guid: 78e88ba7aa52449d0980ff5cf8dd6772, type: 3}
+  m_Name: Level2boss
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterInfo
+  _health: 120
+  _damage: 20
+  _crystal: 4

@@ -15,3 +15,4 @@ MonoBehaviour:
   cardName: Empress
   damage: 10
   health: 30
+  quip: 
