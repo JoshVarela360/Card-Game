@@ -666,6 +666,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 601274527}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: ButtonClickSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 129465700}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
         m_MethodName: ContinueButton
@@ -2681,7 +2693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   _monsterattackSFX: {fileID: 26630928}
   _playerattackSFX: {fileID: 701594654}
-  _buttonPressed: {fileID: 0}
+  _buttonPressed: {fileID: 126402962}
 --- !u!4 &601274528
 Transform:
   m_ObjectHideFlags: 0
@@ -5210,6 +5222,7 @@ GameObject:
   - component: {fileID: 1481589098}
   - component: {fileID: 1481589099}
   - component: {fileID: 1481589100}
+  - component: {fileID: 1481589101}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -5334,6 +5347,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00e12838e77e7b4e8e87b0bb8a81127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocatorScript
+--- !u!114 &1481589101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481589095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58af0cb151d66492da04825efc4d9f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Buttons
+  _sceneController: {fileID: 0}
+  buttonClickSound: {fileID: 0}
+  _upgradePanel: {fileID: 0}
+  _endGamePanel: {fileID: 0}
 --- !u!1 &1481693398
 GameObject:
   m_ObjectHideFlags: 0

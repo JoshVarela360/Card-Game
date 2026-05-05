@@ -47,6 +47,12 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene("LevelTwo");
     }
 
+    public void LoadLevelThreeScene()
+    {
+        _previousSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene("LevelThree");
+    }
+
     public void LoadLevelBossScene()
     {
         _previousSceneName = SceneManager.GetActiveScene().name;
@@ -83,19 +89,22 @@ public class SceneController : MonoBehaviour
                 if (lvlOneGlow != null) lvlOneGlow.SetActive(true);
             }
         }
+ 
+        // shows levelThreeGlow only if coming from LevelTwo
+        else if (_previousSceneName == "LevelTwo")
+        {
+            if (lvlThreeGlow != null) lvlThreeGlow.SetActive(true);
+        }
 
+        // shows levelBossGlow only if coming from LevelThree
+        else if (_previousSceneName == "LevelThree")
+        {
+            if (lvlBossGlow != null) lvlBossGlow.SetActive(true);
+        }
+    
         else if (_previousSceneName == "LevelBoss")
         {
             if (endGamePanel != null) endGamePanel.SetActive(true);
         }
-        // else if (_previousSceneName == "LevelTwo")
-        // {
-        //     if (lvlThreeGlow != null) lvlThreeGlow.SetActive(true);
-        // }
-
-        // else if (_previousSceneName == "LevelThree")
-        // {
-        //     if (lvlBossGlow != null) lvlBossGlow.SetActive(true);
-        // }
     }
 }
