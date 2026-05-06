@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e88ba7aa52449d0980ff5cf8dd6772, type: 3}
   m_Name: Level3boss
   m_EditorClassIdentifier: Assembly-CSharp::MonsterInfo
-  _health: 130
-  _damage: 30
+  _health: 360
+  _damage: 35
   _crystal: 5
