@@ -4,6 +4,7 @@ public class SceneController : MonoBehaviour
 {
     //[SerializeField] PlayerDeck _playerDeck;
     [SerializeField] Buttons _buttons;
+
     public GameObject lvlOneGlow;
     public GameObject lvlTwoGlow;
     public GameObject lvlThreeGlow;
@@ -93,18 +94,39 @@ public class SceneController : MonoBehaviour
         // shows levelThreeGlow only if coming from LevelTwo
         else if (_previousSceneName == "LevelTwo")
         {
-            if (lvlThreeGlow != null) lvlThreeGlow.SetActive(true);
+            if (PlayerDeck.isGameOver == false)
+            {
+                if (lvlThreeGlow != null) lvlThreeGlow.SetActive(true);
+            }
+            else
+            {
+                if (lvlTwoGlow != null) lvlTwoGlow.SetActive(true);
+            }
         }
 
         // shows levelBossGlow only if coming from LevelThree
         else if (_previousSceneName == "LevelThree")
         {
-            if (lvlBossGlow != null) lvlBossGlow.SetActive(true);
+            if (PlayerDeck.isGameOver == false)
+            {
+                if (lvlBossGlow != null) lvlBossGlow.SetActive(true);
+            }
+            else
+            {
+                if (lvlThreeGlow != null) lvlThreeGlow.SetActive(true);
+            }
         }
     
         else if (_previousSceneName == "LevelBoss")
         {
-            if (endGamePanel != null) endGamePanel.SetActive(true);
+            if (PlayerDeck.isGameOver == false)
+            {
+                if (endGamePanel != null) endGamePanel.SetActive(true);
+            }
+            else
+            {
+                if (lvlBossGlow != null) lvlBossGlow.SetActive(true);
+            }
         }
     }
 }

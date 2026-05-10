@@ -94,6 +94,8 @@ public class Buttons : MonoBehaviour
     public void MapButton()
     {
         StartCoroutine(MapButtonRoutine());
+
+        PlayerDeck.isGameOver = true;
     }
 
     private IEnumerator MapButtonRoutine()

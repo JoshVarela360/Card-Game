@@ -68,8 +68,6 @@ public class PlayerDeck : MonoBehaviour
     void Awake()
     {
         ResetCardStats();
-
-        isGameOver = false;
     }
 
 
@@ -238,7 +236,10 @@ public class PlayerDeck : MonoBehaviour
         //Total Health UI
         _healthBar.value = _totalHealth;
 
-
+        if (_totalHealth <= 0)
+        {
+            PlayerLose();
+        }
     }
     void AttackPopup()
     {
@@ -362,7 +363,7 @@ public class PlayerDeck : MonoBehaviour
         {
             _totalHealth = 0;
 
-            PlayerLose();
+            //PlayerLose();
         }
         _totalHealthtext.text = "Team Health: " + _totalHealth;
         //Total Health UI
@@ -445,7 +446,7 @@ public class PlayerDeck : MonoBehaviour
     {
         isGameOver = true;
 
-        Debug.Log(isGameOver);
+        //Debug.Log(isGameOver);
     }
 
 
