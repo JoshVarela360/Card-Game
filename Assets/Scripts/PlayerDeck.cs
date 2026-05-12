@@ -65,6 +65,9 @@ public class PlayerDeck : MonoBehaviour
     //List of alive cards
     public List<string> PlayerCards = new List<string> { "android", "cowboy", "empress" };
 
+    //Store the card that last attacked
+    private string attackedCard;
+
     void Awake()
     {
     }
@@ -259,6 +262,9 @@ public class PlayerDeck : MonoBehaviour
     {
         if (_isPlayerTurn)
         {
+            //store tha card that attacked as next target
+            attackedCard = _name;
+
             TriggerPlayerAttackSFX?.Invoke();
             _monster.MonsterTakeDamage(_playerDamage);
             _isPlayerTurn = false;
@@ -304,12 +310,9 @@ public class PlayerDeck : MonoBehaviour
     {
 
         _dialogueUI.HideDialogue();
-        //randomly select from alive player card list 
-        int randomIndex = Random.Range(0, PlayerCards.Count);
-        string randomCard = PlayerCards[randomIndex];
-        Debug.Log(randomCard);
+        Debug.Log(attackedCard);
 
-        if (randomCard == "android")
+        if (attackedCard == "Android")
         {
             if (_androidInfo.health > damage)
             {
@@ -324,7 +327,7 @@ public class PlayerDeck : MonoBehaviour
             }
 
         }
-        if (randomCard == "cowboy")
+        if (attackedCard == "Cowboy")
         {
             if (_cowboyInfo.health > damage)
             {
@@ -339,7 +342,7 @@ public class PlayerDeck : MonoBehaviour
             }
 
         }
-        if (randomCard == "empress")
+        if (attackedCard == "Empress")
         {
             if (_empressInfo.health >= damage)
             {
@@ -356,8 +359,8 @@ public class PlayerDeck : MonoBehaviour
         //disable the card from future selection if dead
         if (_playerHealth <= 0)
         {
-            Debug.Log("Disable the character: " + randomCard);
-            PlayerCards.Remove(randomCard);
+            Debug.Log("Disable the character: " + attackedCard);
+            PlayerCards.Remove(attackedCard);
         }
 
         //Update total health text
@@ -378,6 +381,7 @@ public class PlayerDeck : MonoBehaviour
         UpdateGameStats();
 
         //proceed to player turn
+        attackedCard = null;
         _isPlayerTurn = true;
         MoveDeckUp();
 
