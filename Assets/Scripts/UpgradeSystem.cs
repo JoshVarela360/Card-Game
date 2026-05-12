@@ -76,10 +76,7 @@ public class UpgradeSystem : MonoBehaviour
             --_crystal._number;
             Debug.Log("work");
             UpdateGameStats();
-            if (_crystal._number == 0)
-            {
-                _cowUpButt.SetActive(false);
-            }
+
         }
 
 
@@ -94,10 +91,7 @@ public class UpgradeSystem : MonoBehaviour
             --_crystal._number;
             Debug.Log("work");
             UpdateGameStats();
-            if (_crystal._number == 0)
-            {
-                _empUpButt.SetActive(false);
-            }
+
         }
 
     }
@@ -110,10 +104,7 @@ public class UpgradeSystem : MonoBehaviour
             --_crystal._number;
             Debug.Log("work");
             UpdateGameStats();
-            if (_crystal._number == 0)
-            {
-                _andUpButt.SetActive(false);
-            }
+
         }
 
 
