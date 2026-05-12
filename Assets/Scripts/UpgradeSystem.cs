@@ -65,6 +65,7 @@ public class UpgradeSystem : MonoBehaviour
     {
         _upgradePopUp.SetActive(false);
 
+
     }
 
     public void UpgradeCowboyStats()
@@ -74,7 +75,7 @@ public class UpgradeSystem : MonoBehaviour
             _cowboyInfo.damage += 10;
             _cowboyInfo.health += 10;
             --_crystal._number;
-            Debug.Log("work");
+
             UpdateGameStats();
 
         }
@@ -89,7 +90,7 @@ public class UpgradeSystem : MonoBehaviour
             _empressInfo.damage += 10;
             _empressInfo.health += 10;
             --_crystal._number;
-            Debug.Log("work");
+
             UpdateGameStats();
 
         }
@@ -102,7 +103,7 @@ public class UpgradeSystem : MonoBehaviour
             _androidInfo.damage += 10;
             _androidInfo.health += 10;
             --_crystal._number;
-            Debug.Log("work");
+
             UpdateGameStats();
 
         }

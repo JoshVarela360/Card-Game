@@ -67,27 +67,12 @@ public class PlayerDeck : MonoBehaviour
 
     void Awake()
     {
-        ResetCardStats();
     }
 
 
     void Start()
     {
-        _attackMenu.SetActive(false);
-        //StartingCharacterStats();
-        _totalHealth = _androidInfo.health + _cowboyInfo.health + _empressInfo.health;
-        _totalHealthtext.text = "Team Health: " + _totalHealth;
-        _healthBar.maxValue = _totalHealth;
-        _healthBar.value = _totalHealth;
-        _deckuplocation = _deck.GetComponent<RectTransform>().anchoredPosition.y + _moveupdistance;
-        _deckdownlocation = _deckuplocation - _moveupdistance;
-        UpdateGameStats();
-
-        Debug.Log("Android: " + _androidInfo.health);
-        Debug.Log("Cowboy: " + _cowboyInfo.health);
-        Debug.Log("Empress: " + _empressInfo.health);
-
-        isGameOver = false;
+        ResetCardStats();
     }
 
     void Update()
@@ -100,7 +85,7 @@ public class PlayerDeck : MonoBehaviour
     //Reset the card stats to the card datas draged in the inspector of this level
     public void ResetCardStats()
     {
-
+        //Set Card Info
         _androidInfo.health = _androidStartStats.health;
         _cowboyInfo.health = _cowboyStartStats.health;
         _empressInfo.health = _empressStartStats.health;
@@ -108,7 +93,25 @@ public class PlayerDeck : MonoBehaviour
         _cowboyInfo.damage = _cowboyStartStats.damage;
         _empressInfo.damage = _empressStartStats.damage;
 
+        //Set Total Health
+        _totalHealth = _androidInfo.health + _cowboyInfo.health + _empressInfo.health;
+
+        //Reset Screen
+        _attackMenu.SetActive(false);
+        //Set Card display
+        UpdateGameStats();
+        //Set HealthBar display
+        _totalHealthtext.text = "Team Health: " + _totalHealth;
+        _healthBar.maxValue = _totalHealth;
+        _healthBar.value = _totalHealth;
+        //Set Deck Location
+        _deckuplocation = _deck.GetComponent<RectTransform>().anchoredPosition.y + _moveupdistance;
+        _deckdownlocation = _deckuplocation - _moveupdistance;
+        isGameOver = false;
+
     }
+
+
     /*void StartingCharacterStats()
     {
         if (_androidInfo && _cowboyInfo && _empressInfo == null)
@@ -356,9 +359,11 @@ public class PlayerDeck : MonoBehaviour
             Debug.Log("Disable the character: " + randomCard);
             PlayerCards.Remove(randomCard);
         }
+
         //Update total health text
         /*_totalHealth -= damage;*/
         RecalculateTotalHealth();
+
         if (_totalHealth < 0)
         {
             _totalHealth = 0;
