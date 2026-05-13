@@ -45,6 +45,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2466845869
+    locked: 0
+  - name: Cards
+    uniqueID: 1168260915
+    locked: 0
+  - name: Effects
+    uniqueID: 3692570959
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1
