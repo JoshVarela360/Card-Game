@@ -111,6 +111,7 @@ public class Buttons : MonoBehaviour
     {
         buttonClickSound.Play();
         _upgradePanel.SetActive(false);
+        LocatorScript.Instance.UpgradeManager.CloseUpgradeUI();
 
     }
 

@@ -794,6 +794,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203992976}
   m_CullTransparentMesh: 1
+--- !u!1 &248768885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6237351815492329073, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+  m_PrefabInstance: {fileID: 6650667516009590701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &272724801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1571,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &449392023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6033311391191117903, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+  m_PrefabInstance: {fileID: 1717391120318838475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &481407290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,6 +2274,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811415166}
   m_CullTransparentMesh: 1
+--- !u!1 &817162681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3668691490542338080, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+  m_PrefabInstance: {fileID: 6650667516009590701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,15 +3519,21 @@ MonoBehaviour:
   _cowUpButt: {fileID: 0}
   _andUpButt: {fileID: 0}
   _empUpButt: {fileID: 0}
+  _cowboySelectionButton: {fileID: 449392023}
+  _empressSelectionButton: {fileID: 248768885}
+  _androidSelectionButton: {fileID: 1781276755}
+  _cowboyEffect: {fileID: 2067530484}
+  _empressEffect: {fileID: 817162681}
+  _androidEffect: {fileID: 2064478982}
   _androidInfo: {fileID: 11400000, guid: 3e1ef99cbd0ce441cbb1eb6e503cad8a, type: 2}
   _cowboyInfo: {fileID: 11400000, guid: 33a952cd89d5a4cf3bf9a3d180d59dd9, type: 2}
   _empressInfo: {fileID: 11400000, guid: 9f0d300b55d284956bca1ddcd1248cc2, type: 2}
-  _cowHP: {fileID: 0}
-  _cowATK: {fileID: 0}
-  _empHP: {fileID: 0}
-  _empATK: {fileID: 0}
-  _andHP: {fileID: 0}
-  _andATK: {fileID: 0}
+  _cowHP: {fileID: 126076130}
+  _cowATK: {fileID: 429922887}
+  _empHP: {fileID: 17812005}
+  _empATK: {fileID: 1015679070}
+  _andHP: {fileID: 335967523}
+  _andATK: {fileID: 1806165158}
   _crystal: {fileID: 11400000, guid: fff8db615f1454ac987134f893fca9d3, type: 2}
 --- !u!114 &1481589100
 MonoBehaviour:
@@ -4184,6 +4205,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773595981}
   m_CullTransparentMesh: 1
+--- !u!1 &1781276755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2614309423423127047, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+  m_PrefabInstance: {fileID: 3506411045852564152}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1794589868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4959,6 +4985,16 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2064478982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 42018829476492798, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+  m_PrefabInstance: {fileID: 3506411045852564152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2067530484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5354659849130872011, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+  m_PrefabInstance: {fileID: 1717391120318838475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2118472318
 GameObject:
   m_ObjectHideFlags: 0
