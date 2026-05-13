@@ -360,7 +360,7 @@ public class PlayerDeck : MonoBehaviour
         if (_playerHealth <= 0)
         {
             Debug.Log("Disable the character: " + attackedCard);
-            PlayerCards.Remove(attackedCard);
+            PlayerCards.Remove(attackedCard.ToLower());
         }
 
         //Update total health text
