@@ -16,7 +16,7 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] GameObject _androidSelectionButton;
 
     [SerializeField] GameObject _cowboyEffect;
-    [SerializeField] GameObject _empressEffect; 
+    [SerializeField] GameObject _empressEffect;
     [SerializeField] GameObject _androidEffect;
 
 
@@ -48,20 +48,20 @@ public class UpgradeSystem : MonoBehaviour
         OpenUpgradeUI();
 
         _currentSceneName = SceneManager.GetActiveScene().name;
-       
-        if(SceneManager.GetActiveScene().name == ("LevelOne"))
+
+        if (SceneManager.GetActiveScene().name == ("LevelOne"))
         {
-            Debug.Log("Level One");                             
-            CloseUpgradeUI();
+            Debug.Log("Level One");
+            //CloseUpgradeUI();
         }
     }
-    
-    
+
+
 
 
     public void UpdateGameStats()
     {
-        
+
         //Emperor stats UI
         _empATK.text = _empressInfo.damage.ToString();
 
@@ -90,7 +90,7 @@ public class UpgradeSystem : MonoBehaviour
     public void CloseUpgradeUI()
     {
         _upgradePopUp.SetActive(false);
-    _empressSelectionButton.SetActive(true);
+        _empressSelectionButton.SetActive(true);
         _androidSelectionButton.SetActive(true);
         _cowboySelectionButton.SetActive(true);
 
