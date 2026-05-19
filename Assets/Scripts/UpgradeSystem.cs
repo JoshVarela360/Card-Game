@@ -146,4 +146,9 @@ public class UpgradeSystem : MonoBehaviour
     {
         _crystal._number += amount;
     }
+
+    private void OnDestroy()
+    {
+        Monster.AddCrystal -= IncreaseCrystals;
+    }
 }
