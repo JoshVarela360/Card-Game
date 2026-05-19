@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterInfo
   _health: 260
   _damage: 35
-  _crystal: 2
+  _crystal: 5
