@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class PlayerDeck : MonoBehaviour
 {
@@ -49,7 +50,7 @@ public class PlayerDeck : MonoBehaviour
     [SerializeField] TextMeshProUGUI _andATK;
 
 
-
+    [SerializeField] Shader _deadVFX;
 
     //Normal Variables
 
@@ -89,6 +90,7 @@ public class PlayerDeck : MonoBehaviour
         SelectedCardStats();
 
         UpdateGameStats();
+
     }
 
     //Reset the card stats to the card datas draged in the inspector of this level
@@ -331,6 +333,7 @@ public class PlayerDeck : MonoBehaviour
             else
             {
                 _androidInfo.health = 0;
+                LocatorScript.Instance.UpgradeManager._androidEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
                 _playerHealth = _androidInfo.health;
             }
 
@@ -347,6 +350,7 @@ public class PlayerDeck : MonoBehaviour
             else
             {
                 _cowboyInfo.health = 0;
+                LocatorScript.Instance.UpgradeManager._cowboyEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
                 _playerHealth = _cowboyInfo.health;
             }
 
@@ -363,6 +367,7 @@ public class PlayerDeck : MonoBehaviour
             else
             {
                 _empressInfo.health = 0;
+                LocatorScript.Instance.UpgradeManager._empressEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
                 _playerHealth = _empressInfo.health;
             }
         }
@@ -370,6 +375,8 @@ public class PlayerDeck : MonoBehaviour
         //disable the card from future selection if dead
         if (_playerHealth <= 0)
         {
+           
+           PlayerCardObjects.Find(card => card.name.Contains(attackedCard)).GetComponent<Image>().color = Color.grey;
             Debug.Log("Disable the character: " + attackedCard);
             PlayerCards.Remove(attackedCard.ToLower());
         }

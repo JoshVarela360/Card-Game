@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class UpgradeSystem : MonoBehaviour
 {
 
+    [SerializeField] Shader _fireVFX;
+
     [SerializeField] GameObject _upgradePopUp;
     //Upgrade buttons
     [SerializeField] GameObject _cowUpButt;
@@ -15,9 +17,9 @@ public class UpgradeSystem : MonoBehaviour
     [SerializeField] GameObject _empressSelectionButton;
     [SerializeField] GameObject _androidSelectionButton;
 
-    [SerializeField] GameObject _cowboyEffect;
-    [SerializeField] GameObject _empressEffect;
-    [SerializeField] GameObject _androidEffect;
+    [SerializeField] public GameObject _cowboyEffect;
+    [SerializeField] public GameObject _empressEffect;
+    [SerializeField] public GameObject _androidEffect;
 
 
     //ScriptableObjects
@@ -100,6 +102,7 @@ public class UpgradeSystem : MonoBehaviour
     {
         if (_crystal._number >= 1)
         {
+            _cowboyEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _fireVFX;
             _cowboyEffect.SetActive(true);
             _cowboyInfo.damage += 10;
             _cowboyInfo.health += 10;
@@ -116,6 +119,7 @@ public class UpgradeSystem : MonoBehaviour
     {
         if (_crystal._number >= 1)
         {
+            _empressEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _fireVFX;
             _empressEffect.SetActive(true);
             _empressInfo.damage += 20;
             _empressInfo.health += 10;
@@ -130,6 +134,7 @@ public class UpgradeSystem : MonoBehaviour
     {
         if (_crystal._number >= 1)
         {
+            _androidEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _fireVFX;
             _androidEffect.SetActive(true);
             _androidInfo.damage += 10;
             _androidInfo.health += 10;
