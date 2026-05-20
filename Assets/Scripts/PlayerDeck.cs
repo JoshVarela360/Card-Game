@@ -335,6 +335,10 @@ public class PlayerDeck : MonoBehaviour
                 _androidInfo.health = 0;
                 LocatorScript.Instance.UpgradeManager._androidEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
                 _playerHealth = _androidInfo.health;
+
+                //Disable 
+                Button android = PlayerCardObjects[0].GetComponent<Button>();
+                android.enabled = false;
             }
 
         }
@@ -352,6 +356,8 @@ public class PlayerDeck : MonoBehaviour
                 _cowboyInfo.health = 0;
                 LocatorScript.Instance.UpgradeManager._cowboyEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
                 _playerHealth = _cowboyInfo.health;
+                Button cowboy = PlayerCardObjects[1].GetComponent<Button>();
+                cowboy.enabled = false;
             }
 
         }
@@ -369,14 +375,16 @@ public class PlayerDeck : MonoBehaviour
                 _empressInfo.health = 0;
                 LocatorScript.Instance.UpgradeManager._empressEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
                 _playerHealth = _empressInfo.health;
+                Button empress = PlayerCardObjects[2].GetComponent<Button>();
+                empress.enabled = false;
             }
         }
 
         //disable the card from future selection if dead
         if (_playerHealth <= 0)
         {
-           
-           PlayerCardObjects.Find(card => card.name.Contains(attackedCard)).GetComponent<Image>().color = Color.grey;
+
+            PlayerCardObjects.Find(card => card.name.Contains(attackedCard)).GetComponent<Image>().color = Color.grey;
             Debug.Log("Disable the character: " + attackedCard);
             PlayerCards.Remove(attackedCard.ToLower());
         }
@@ -483,9 +491,9 @@ public class PlayerDeck : MonoBehaviour
     {
         Debug.Log("coroutine");
 
-        image.color = Color.red; 
-        yield return new WaitForSeconds(0.15f); 
-        image.color = Color.white; 
+        image.color = Color.red;
+        yield return new WaitForSeconds(0.15f);
+        image.color = Color.white;
     }
 
 }
