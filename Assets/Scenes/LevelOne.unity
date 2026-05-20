@@ -374,8 +374,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 960, y: 600}
+  m_AnchoredPosition: {x: -0.00064278, y: 0}
+  m_SizeDelta: {x: 1009.9, y: 540}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112672667
 MonoBehaviour:
@@ -5341,6 +5341,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1538091506}
     m_Modifications:
+    - target: {fileID: 518739368356851496, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481589096}
+    - target: {fileID: 518739368356851496, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CowboySelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 518739368356851496, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerDeck, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2858653808810046894, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5522,6 +5534,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Android Card
       objectReference: {fileID: 0}
+    - target: {fileID: 5624419586669693582, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481589096}
+    - target: {fileID: 5624419586669693582, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AndroidSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624419586669693582, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerDeck, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5675,6 +5699,18 @@ PrefabInstance:
     - target: {fileID: 515106203771545917, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
       propertyPath: m_Name
       value: Empress Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803360555779720708, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481589096}
+    - target: {fileID: 2803360555779720708, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EmpressSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803360555779720708, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerDeck, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8825139737206255472, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
       propertyPath: m_Pivot.x

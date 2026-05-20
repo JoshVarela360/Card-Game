@@ -976,7 +976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.59860414, y: 0}
   m_AnchorMax: {x: 1, y: 0.6366667}
-  m_AnchoredPosition: {x: -1.8704224, y: 0.00030517578}
+  m_AnchoredPosition: {x: -1.8704834, y: 0.00036621094}
   m_SizeDelta: {x: -671.08, y: -598.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326586327
@@ -5163,6 +5163,7 @@ MonoBehaviour:
   _empATK: {fileID: 1015679070}
   _andHP: {fileID: 335967523}
   _andATK: {fileID: 1806165158}
+  _deadVFX: {fileID: 0}
   _name: 
   _playerHealth: 0
   _playerName: 
@@ -5221,6 +5222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a3b2eb07051e64eba8cead98d46142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeSystem
+  _fireVFX: {fileID: 0}
   _upgradePopUp: {fileID: 326586325}
   _cowUpButt: {fileID: 1481693398}
   _andUpButt: {fileID: 1029128561}
@@ -7868,6 +7870,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1538091506}
     m_Modifications:
+    - target: {fileID: 518739368356851496, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481589096}
+    - target: {fileID: 518739368356851496, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CowboySelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 518739368356851496, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerDeck, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2858653808810046894, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8073,6 +8087,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Android Card
       objectReference: {fileID: 0}
+    - target: {fileID: 5624419586669693582, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481589096}
+    - target: {fileID: 5624419586669693582, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AndroidSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 5624419586669693582, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerDeck, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8105,6 +8131,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1481589096}
+    - target: {fileID: 2803360555779720708, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481589096}
+    - target: {fileID: 2803360555779720708, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EmpressSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 2803360555779720708, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerDeck, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8825139737206255472, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
