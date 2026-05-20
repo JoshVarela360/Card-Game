@@ -323,12 +323,12 @@ public class PlayerDeck : MonoBehaviour
 
         if (attackedCard == "Android")
         {
+            StartCoroutine(PlayerHitEffectCoroutine(_androidImage));
+
             if (_androidInfo.health > damage)
             {
                 _androidInfo.health -= damage;
                 _playerHealth = _androidInfo.health;
-
-                StartCoroutine(PlayerHitEffectCoroutine(_androidImage));
             }
             else
             {
@@ -344,12 +344,12 @@ public class PlayerDeck : MonoBehaviour
         }
         if (attackedCard == "Cowboy")
         {
+            StartCoroutine(PlayerHitEffectCoroutine(_cowboyImage));
+
             if (_cowboyInfo.health > damage)
             {
                 _cowboyInfo.health -= damage;
                 _playerHealth = _cowboyInfo.health;
-
-                StartCoroutine(PlayerHitEffectCoroutine(_cowboyImage));
             }
             else
             {
@@ -363,12 +363,12 @@ public class PlayerDeck : MonoBehaviour
         }
         if (attackedCard == "Empress")
         {
+            StartCoroutine(PlayerHitEffectCoroutine(_empressImage));
+            
             if (_empressInfo.health >= damage)
             {
                 _empressInfo.health -= damage;
                 _playerHealth = _empressInfo.health;
-
-                StartCoroutine(PlayerHitEffectCoroutine(_empressImage));
             }
             else
             {
