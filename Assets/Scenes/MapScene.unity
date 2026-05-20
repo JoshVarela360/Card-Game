@@ -489,7 +489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &150775202
 RectTransform:
   m_ObjectHideFlags: 0
@@ -655,6 +655,12 @@ MonoBehaviour:
   _cowUpButt: {fileID: 1322950599}
   _andUpButt: {fileID: 597472118}
   _empUpButt: {fileID: 825649422}
+  _cowboySelectionButton: {fileID: 0}
+  _empressSelectionButton: {fileID: 0}
+  _androidSelectionButton: {fileID: 0}
+  _cowboyEffect: {fileID: 0}
+  _empressEffect: {fileID: 0}
+  _androidEffect: {fileID: 0}
   _androidInfo: {fileID: 11400000, guid: 3e1ef99cbd0ce441cbb1eb6e503cad8a, type: 2}
   _cowboyInfo: {fileID: 11400000, guid: 33a952cd89d5a4cf3bf9a3d180d59dd9, type: 2}
   _empressInfo: {fileID: 11400000, guid: 9f0d300b55d284956bca1ddcd1248cc2, type: 2}
@@ -711,6 +717,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttons
   _sceneController: {fileID: 380851502}
+  lvlOneButton: {fileID: 150775201}
+  lvlTwoButton: {fileID: 849143646}
+  lvlThreeButton: {fileID: 0}
+  lvlBossButton: {fileID: 0}
   buttonClickSound: {fileID: 1677773328}
   _upgradePanel: {fileID: 0}
   _endGamePanel: {fileID: 0}
@@ -1129,7 +1139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &754154041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1410,7 +1420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &849143647
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3207,7 +3217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1863305933
 RectTransform:
   m_ObjectHideFlags: 0
