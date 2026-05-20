@@ -155,6 +155,7 @@ public class PlayerDeck : MonoBehaviour
     }
 
 
+
     //Show stats of selected cards
     void SelectedCardStats()
     {
@@ -252,7 +253,7 @@ public class PlayerDeck : MonoBehaviour
         if (_name == "Android" || _name == "Cowboy" || _name == "Empress")
         {
             _attackMenu.SetActive(true);
-            MoveCardUp();
+            //MoveCardUp();
 
         }
     }
@@ -268,11 +269,11 @@ public class PlayerDeck : MonoBehaviour
             TriggerPlayerAttackSFX?.Invoke();
             _monster.MonsterTakeDamage(_playerDamage);
             _isPlayerTurn = false;
-            MoveCardDown();
+            //MoveCardDown();
             //unslect player card
             _name = null;
             _attackMenu.SetActive(false);
-            MoveDeckDown();
+            //MoveDeckDown();
         }
     }
 
@@ -383,7 +384,7 @@ public class PlayerDeck : MonoBehaviour
         //proceed to player turn
         attackedCard = null;
         _isPlayerTurn = true;
-        MoveDeckUp();
+        //MoveDeckUp();
 
     }
 
@@ -407,6 +408,7 @@ public class PlayerDeck : MonoBehaviour
                 Vector2 tempPos = card.GetComponent<RectTransform>().anchoredPosition;
                 tempPos.y = _deckuplocation + _moveupdistance;
                 card.GetComponent<RectTransform>().anchoredPosition = tempPos;
+                //card.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
 
             }
             else
@@ -427,12 +429,13 @@ public class PlayerDeck : MonoBehaviour
                 Vector2 tempPos = card.GetComponent<RectTransform>().anchoredPosition;
                 tempPos.y = _deckuplocation;
                 card.GetComponent<RectTransform>().anchoredPosition = tempPos;
+                //scard.transform.localScale = new Vector3(1f, 1f, 1f);
 
             }
 
         }
     }
-
+    /*
     void MoveDeckUp()
     {
         Vector2 tempPos = _deck.GetComponent<RectTransform>().anchoredPosition;
@@ -450,6 +453,7 @@ public class PlayerDeck : MonoBehaviour
         _deck.GetComponent<RectTransform>().anchoredPosition = tempPos;
 
     }
+    */
 
     void PlayerLose()
     {

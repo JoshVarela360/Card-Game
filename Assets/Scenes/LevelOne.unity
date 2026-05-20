@@ -799,6 +799,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6237351815492329073, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
   m_PrefabInstance: {fileID: 6650667516009590701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &248768888 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4361977226757480317, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+  m_PrefabInstance: {fileID: 6650667516009590701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248768885}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &272724801
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,7 +944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &326586326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2366,6 +2377,84 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8825139737206255472, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
   m_PrefabInstance: {fileID: 6650667516009590701}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &976279644
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976279640}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3673a2fb5ace4a0cbaebbabb8b86378, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &976279645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976279640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 3
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 248768888}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1481589096}
+        m_TargetAssemblyTypeName: Playerattacks, Assembly-CSharp
+        m_MethodName: EmpressSelected
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &978852732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3448,8 +3537,8 @@ MonoBehaviour:
   - {fileID: 323658367}
   - {fileID: 651461518}
   - {fileID: 976279640}
-  _moveupdistance: 10
-  _deckdownlocation: 0
+  _moveupdistance: 20
+  _deckdownlocation: -173
   _dialogueUI: {fileID: 170233416}
   _attackMenu: {fileID: 675519035}
   _totalHealthtext: {fileID: 1855258775}
@@ -3521,7 +3610,7 @@ MonoBehaviour:
   _empUpButt: {fileID: 0}
   _cowboySelectionButton: {fileID: 449392023}
   _empressSelectionButton: {fileID: 248768885}
-  _androidSelectionButton: {fileID: 1781276755}
+  _androidSelectionButton: {fileID: 0}
   _cowboyEffect: {fileID: 2067530484}
   _empressEffect: {fileID: 817162681}
   _androidEffect: {fileID: 2064478982}
@@ -4205,11 +4294,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773595981}
   m_CullTransparentMesh: 1
---- !u!1 &1781276755 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2614309423423127047, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
-  m_PrefabInstance: {fileID: 3506411045852564152}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1794589868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4925,7 +5009,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -5306,6 +5390,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1538091506}
     m_Modifications:
+    - target: {fileID: 518739368356851496, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481589096}
     - target: {fileID: 2858653808810046894, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5372,7 +5460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2858653808810046894, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -46.511536
+      value: -46.51154
       objectReference: {fileID: 0}
     - target: {fileID: 2858653808810046894, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5386,10 +5474,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3997761251346111765, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1481589096}
     - target: {fileID: 8671027257943429777, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
       propertyPath: m_Name
       value: Cowboy Card
@@ -5457,19 +5541,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1011323108646958065, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1011323108646958065, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1011323108646958065, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.16504757
+      value: 0.1650476
       objectReference: {fileID: 0}
     - target: {fileID: 1011323108646958065, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -132.58838
+      value: -132.5884
       objectReference: {fileID: 0}
     - target: {fileID: 1011323108646958065, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5487,14 +5571,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 19
       objectReference: {fileID: 0}
-    - target: {fileID: 2022508597189010938, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1481589096}
     - target: {fileID: 5314659851201745597, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
       propertyPath: m_Name
       value: Android Card
       objectReference: {fileID: 0}
+    - target: {fileID: 5624419586669693582, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1481589096}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5704,11 +5788,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8825139737206255472, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 129.41168
+      value: 138
       objectReference: {fileID: 0}
     - target: {fileID: 8825139737206255472, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -66.5116
+      value: -68
       objectReference: {fileID: 0}
     - target: {fileID: 8825139737206255472, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5722,10 +5806,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -19
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2594429771774804058, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 515106203771545917, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 976279645}
+    - targetCorrespondingSourceObject: {fileID: 515106203771545917, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 976279644}
   m_SourcePrefab: {fileID: 100100000, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
