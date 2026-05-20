@@ -94,6 +94,8 @@ public class SceneController : MonoBehaviour
             else
             {
                 if (lvlOneGlow != null) lvlOneGlow.SetActive(true);
+
+                _buttons.lvlOneButton.SetActive(true);
             }
         }
  
@@ -109,6 +111,8 @@ public class SceneController : MonoBehaviour
             else
             {
                 if (lvlTwoGlow != null) lvlTwoGlow.SetActive(true);
+
+                _buttons.lvlTwoButton.SetActive(true);
             }
         }
 
@@ -124,6 +128,8 @@ public class SceneController : MonoBehaviour
             else
             {
                 if (lvlThreeGlow != null) lvlThreeGlow.SetActive(true);
+
+                _buttons.lvlThreeButton.SetActive(true);
             }
 
         }
