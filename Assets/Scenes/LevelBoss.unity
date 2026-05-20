@@ -572,6 +572,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttons
   _sceneController: {fileID: 0}
+  lvlOneButton: {fileID: 0}
+  lvlTwoButton: {fileID: 0}
+  lvlThreeButton: {fileID: 0}
+  lvlBossButton: {fileID: 0}
   buttonClickSound: {fileID: 406239882}
   _upgradePanel: {fileID: 326586325}
   _endGamePanel: {fileID: 0}
@@ -5169,6 +5173,9 @@ MonoBehaviour:
   - android
   - cowboy
   - empress
+  _androidImage: {fileID: 3506411045852564153}
+  _cowboyImage: {fileID: 1717391120318838477}
+  _empressImage: {fileID: 6650667516009590703}
 --- !u!4 &1481589097
 Transform:
   m_ObjectHideFlags: 0
@@ -5220,7 +5227,7 @@ MonoBehaviour:
   _empUpButt: {fileID: 429394600}
   _cowboySelectionButton: {fileID: 1717391120318838476}
   _empressSelectionButton: {fileID: 6650667516009590702}
-  _androidSelectionButton: {fileID: 3506411045852564153}
+  _androidSelectionButton: {fileID: 0}
   _cowboyEffect: {fileID: 799006106}
   _empressEffect: {fileID: 488808410}
   _androidEffect: {fileID: 1994153426}
@@ -7959,6 +7966,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6033311391191117903, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
   m_PrefabInstance: {fileID: 1717391120318838475}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1717391120318838477 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8686539041056574389, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+  m_PrefabInstance: {fileID: 1717391120318838475}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &3506411045852564152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8060,11 +8078,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
---- !u!1 &3506411045852564153 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2614309423423127047, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+--- !u!114 &3506411045852564153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3458577498151237066, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
   m_PrefabInstance: {fileID: 3506411045852564152}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &6650667516009590701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8171,6 +8195,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6237351815492329073, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
   m_PrefabInstance: {fileID: 6650667516009590701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6650667516009590703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 178000099649770742, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+  m_PrefabInstance: {fileID: 6650667516009590701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

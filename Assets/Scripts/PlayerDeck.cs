@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using System.Collections;
 
 public class PlayerDeck : MonoBehaviour
 {
@@ -67,6 +68,11 @@ public class PlayerDeck : MonoBehaviour
 
     //Store the card that last attacked
     private string attackedCard;
+
+    // Sprite Renderers
+    public Image _androidImage;
+    public Image _cowboyImage;
+    public Image _empressImage;
 
     void Awake()
     {
@@ -320,6 +326,7 @@ public class PlayerDeck : MonoBehaviour
                 _androidInfo.health -= damage;
                 _playerHealth = _androidInfo.health;
 
+                StartCoroutine(PlayerHitEffectCoroutine(_androidImage));
             }
             else
             {
@@ -335,6 +342,7 @@ public class PlayerDeck : MonoBehaviour
                 _cowboyInfo.health -= damage;
                 _playerHealth = _cowboyInfo.health;
 
+                StartCoroutine(PlayerHitEffectCoroutine(_cowboyImage));
             }
             else
             {
@@ -349,6 +357,8 @@ public class PlayerDeck : MonoBehaviour
             {
                 _empressInfo.health -= damage;
                 _playerHealth = _empressInfo.health;
+
+                StartCoroutine(PlayerHitEffectCoroutine(_empressImage));
             }
             else
             {
@@ -462,7 +472,14 @@ public class PlayerDeck : MonoBehaviour
         //Debug.Log(isGameOver);
     }
 
+    IEnumerator PlayerHitEffectCoroutine(Image image)
+    {
+        Debug.Log("coroutine");
 
+        image.color = Color.red; 
+        yield return new WaitForSeconds(0.15f); 
+        image.color = Color.white; 
+    }
 
 }
 

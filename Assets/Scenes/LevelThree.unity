@@ -490,6 +490,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttons
   _sceneController: {fileID: 0}
+  lvlOneButton: {fileID: 0}
+  lvlTwoButton: {fileID: 0}
+  lvlThreeButton: {fileID: 0}
+  lvlBossButton: {fileID: 0}
   buttonClickSound: {fileID: 126402962}
   _upgradePanel: {fileID: 326586325}
   _endGamePanel: {fileID: 0}
@@ -942,7 +946,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6023542, y: 0}
   m_AnchorMax: {x: 1, y: 0.6391667}
-  m_AnchoredPosition: {x: 4.0958, y: -0.0057983}
+  m_AnchoredPosition: {x: 4.095764, y: -0.00579834}
   m_SizeDelta: {x: -664.18, y: -601.47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326586327
@@ -4945,6 +4949,9 @@ MonoBehaviour:
   - android
   - cowboy
   - empress
+  _androidImage: {fileID: 3506411045852564154}
+  _cowboyImage: {fileID: 1717391120318838478}
+  _empressImage: {fileID: 6650667516009590704}
 --- !u!4 &1481589097
 Transform:
   m_ObjectHideFlags: 0
@@ -4996,7 +5003,7 @@ MonoBehaviour:
   _empUpButt: {fileID: 429394600}
   _cowboySelectionButton: {fileID: 1717391120318838477}
   _empressSelectionButton: {fileID: 6650667516009590703}
-  _androidSelectionButton: {fileID: 3506411045852564154}
+  _androidSelectionButton: {fileID: 0}
   _cowboyEffect: {fileID: 1717391120318838476}
   _empressEffect: {fileID: 6650667516009590702}
   _androidEffect: {fileID: 3506411045852564153}
@@ -5035,6 +5042,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttons
   _sceneController: {fileID: 1481589098}
+  lvlOneButton: {fileID: 0}
+  lvlTwoButton: {fileID: 0}
+  lvlThreeButton: {fileID: 0}
+  lvlBossButton: {fileID: 0}
   buttonClickSound: {fileID: 1481589102}
   _upgradePanel: {fileID: 0}
   _endGamePanel: {fileID: 0}
@@ -7832,6 +7843,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6033311391191117903, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
   m_PrefabInstance: {fileID: 1717391120318838475}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1717391120318838478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8686539041056574389, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+  m_PrefabInstance: {fileID: 1717391120318838475}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &3506411045852564152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7938,11 +7960,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 42018829476492798, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
   m_PrefabInstance: {fileID: 3506411045852564152}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3506411045852564154 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2614309423423127047, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+--- !u!114 &3506411045852564154 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3458577498151237066, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
   m_PrefabInstance: {fileID: 3506411045852564152}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1001 &4838016877762637088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8119,6 +8147,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6237351815492329073, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
   m_PrefabInstance: {fileID: 6650667516009590701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6650667516009590704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 178000099649770742, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+  m_PrefabInstance: {fileID: 6650667516009590701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
