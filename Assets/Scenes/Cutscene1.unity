@@ -421,7 +421,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1570547471}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: LoadLevelOneScene
+        m_MethodName: LoadMapScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -524,6 +524,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Buttons
   _sceneController: {fileID: 0}
+  lvlOneButton: {fileID: 0}
+  lvlTwoButton: {fileID: 0}
+  lvlThreeButton: {fileID: 0}
+  lvlBossButton: {fileID: 0}
   buttonClickSound: {fileID: 5723902085072264509, guid: 35fdb2dc04dfea74fbe661e93ff7e112, type: 3}
   _upgradePanel: {fileID: 0}
   _endGamePanel: {fileID: 0}

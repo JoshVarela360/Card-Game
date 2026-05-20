@@ -9,6 +9,11 @@ public class Buttons : MonoBehaviour
     public static event ButtonPressed TriggerButtonSFX;
     [SerializeField] private SceneController _sceneController;
 
+    public GameObject lvlOneButton;
+    public GameObject lvlTwoButton;
+    public GameObject lvlThreeButton;
+    public GameObject lvlBossButton;
+
     public AudioSource buttonClickSound;
 
     public GameObject _upgradePanel;
@@ -112,7 +117,6 @@ public class Buttons : MonoBehaviour
         buttonClickSound.Play();
         _upgradePanel.SetActive(false);
         LocatorScript.Instance.UpgradeManager.CloseUpgradeUI();
-
     }
 
     public void XButton()

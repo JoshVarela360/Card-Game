@@ -67,6 +67,8 @@ public class SceneController : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode) 
     {
+        _buttons = FindAnyObjectByType<Buttons>();
+
         // resets both to be null
         if (lvlOneGlow != null) lvlOneGlow.SetActive(false);
         if (lvlTwoGlow != null) lvlTwoGlow.SetActive(false);
@@ -75,6 +77,8 @@ public class SceneController : MonoBehaviour
         if (_previousSceneName == "Cutscene1")
         {
             if (lvlOneGlow != null) lvlOneGlow.SetActive(true);
+
+            _buttons.lvlOneButton.SetActive(true);
         }
         
 
@@ -84,6 +88,8 @@ public class SceneController : MonoBehaviour
             if (PlayerDeck.isGameOver == false)
             {
                 if (lvlTwoGlow != null) lvlTwoGlow.SetActive(true);
+
+                _buttons.lvlTwoButton.SetActive(true);
             }
             else
             {
@@ -97,6 +103,8 @@ public class SceneController : MonoBehaviour
             if (PlayerDeck.isGameOver == false)
             {
                 if (lvlThreeGlow != null) lvlThreeGlow.SetActive(true);
+
+                _buttons.lvlThreeButton.SetActive(true);
             }
             else
             {
@@ -110,11 +118,14 @@ public class SceneController : MonoBehaviour
             if (PlayerDeck.isGameOver == false)
             {
                 if (lvlBossGlow != null) lvlBossGlow.SetActive(true);
+
+                _buttons.lvlBossButton.SetActive(true);
             }
             else
             {
                 if (lvlThreeGlow != null) lvlThreeGlow.SetActive(true);
             }
+
         }
     
         else if (_previousSceneName == "LevelBoss")
@@ -126,6 +137,8 @@ public class SceneController : MonoBehaviour
             else
             {
                 if (lvlBossGlow != null) lvlBossGlow.SetActive(true);
+
+                _buttons.lvlBossButton.SetActive(true);
             }
         }
     }
