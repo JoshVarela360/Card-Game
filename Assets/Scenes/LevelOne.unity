@@ -798,11 +798,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203992976}
   m_CullTransparentMesh: 1
---- !u!1 &248768885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6237351815492329073, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
-  m_PrefabInstance: {fileID: 6650667516009590701}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &272724801
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +915,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1011323108646958065, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
   m_PrefabInstance: {fileID: 3506411045852564152}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &323658370 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5624419586669693582, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+  m_PrefabInstance: {fileID: 3506411045852564152}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323658367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &326586325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,11 +1581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!1 &449392023 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6033311391191117903, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
-  m_PrefabInstance: {fileID: 1717391120318838475}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &481407290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,6 +1871,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2858653808810046894, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
   m_PrefabInstance: {fileID: 1717391120318838475}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &651461522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 518739368356851496, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+  m_PrefabInstance: {fileID: 1717391120318838475}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651461518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &668876859
 GameObject:
   m_ObjectHideFlags: 0
@@ -2370,6 +2382,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8825139737206255472, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
   m_PrefabInstance: {fileID: 6650667516009590701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &976279644 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2803360555779720708, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+  m_PrefabInstance: {fileID: 6650667516009590701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976279640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &978852732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,9 +3551,9 @@ MonoBehaviour:
   _cowUpButt: {fileID: 0}
   _andUpButt: {fileID: 0}
   _empUpButt: {fileID: 0}
-  _cowboySelectionButton: {fileID: 449392023}
-  _empressSelectionButton: {fileID: 248768885}
-  _androidSelectionButton: {fileID: 1574424613}
+  _cowboySelectionButton: {fileID: 651461522}
+  _empressSelectionButton: {fileID: 976279644}
+  _androidSelectionButton: {fileID: 323658370}
   _cowboyEffect: {fileID: 2067530484}
   _empressEffect: {fileID: 817162681}
   _androidEffect: {fileID: 2064478982}
@@ -3711,11 +3734,6 @@ RectTransform:
   m_AnchoredPosition: {x: -575, y: -173}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1574424613 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5506165765402468699, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
-  m_PrefabInstance: {fileID: 3506411045852564152}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1608434860
 GameObject:
   m_ObjectHideFlags: 0

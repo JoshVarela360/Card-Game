@@ -3,19 +3,21 @@ using TMPro;
 using Unity.VisualScripting;
 using Unity.VectorGraphics;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class UpgradeSystem : MonoBehaviour
 {
 
     [SerializeField] Shader _fireVFX;
 
     [SerializeField] GameObject _upgradePopUp;
+
     //Upgrade buttons
     [SerializeField] GameObject _cowUpButt;
     [SerializeField] GameObject _andUpButt;
     [SerializeField] GameObject _empUpButt;
-    [SerializeField] GameObject _cowboySelectionButton;
-    [SerializeField] GameObject _empressSelectionButton;
-    [SerializeField] GameObject _androidSelectionButton;
+    [SerializeField] Button _cowboySelectionButton;
+    [SerializeField] Button _empressSelectionButton;
+    [SerializeField] Button _androidSelectionButton;
 
     [SerializeField] public GameObject _cowboyEffect;
     [SerializeField] public GameObject _empressEffect;
@@ -85,16 +87,16 @@ public class UpgradeSystem : MonoBehaviour
     public void OpenUpgradeUI()
     {
         _upgradePopUp.SetActive(true);
-        _empressSelectionButton.SetActive(false);
-        _androidSelectionButton.SetActive(false);
-        _cowboySelectionButton.SetActive(false);
+        _empressSelectionButton.enabled = false;
+        _androidSelectionButton.enabled = false;
+        _cowboySelectionButton.enabled = false;
     }
     public void CloseUpgradeUI()
     {
         _upgradePopUp.SetActive(false);
-        _empressSelectionButton.SetActive(true);
-        _androidSelectionButton.SetActive(true);
-        _cowboySelectionButton.SetActive(true);
+        _empressSelectionButton.enabled = true;
+        _androidSelectionButton.enabled = true;
+        _cowboySelectionButton.enabled = true;
 
     }
 
