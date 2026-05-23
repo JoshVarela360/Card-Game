@@ -5187,7 +5187,7 @@ MonoBehaviour:
   _empATK: {fileID: 1015679070}
   _andHP: {fileID: 335967523}
   _andATK: {fileID: 1806165158}
-  _deadVFX: {fileID: 0}
+  _deadVFX: {fileID: -6465566751694194690, guid: 05895776708223a4bb0d5fdb8f71d17b, type: 3}
   _name: 
   _playerHealth: 0
   _playerName: 
@@ -5246,14 +5246,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a3b2eb07051e64eba8cead98d46142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeSystem
-  _fireVFX: {fileID: 0}
+  _fireVFX: {fileID: -6465566751694194690, guid: 0965a92e5c8e5da46b7dee15c6bde15f, type: 3}
   _upgradePopUp: {fileID: 326586325}
   _cowUpButt: {fileID: 1481693398}
   _andUpButt: {fileID: 1029128561}
   _empUpButt: {fileID: 429394600}
   _cowboySelectionButton: {fileID: 1717391120318838476}
   _empressSelectionButton: {fileID: 6650667516009590702}
-  _androidSelectionButton: {fileID: 0}
+  _androidSelectionButton: {fileID: 3506411045852564154}
   _cowboyEffect: {fileID: 799006106}
   _empressEffect: {fileID: 488808410}
   _androidEffect: {fileID: 1994153426}
@@ -8011,11 +8011,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
---- !u!1 &1717391120318838476 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6033311391191117903, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
+--- !u!114 &1717391120318838476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 518739368356851496, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
   m_PrefabInstance: {fileID: 1717391120318838475}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651461518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &1717391120318838477 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8686539041056574389, guid: 90fbdf98c7353844face5257fbb47603, type: 3}
@@ -8151,6 +8157,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &3506411045852564154 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5624419586669693582, guid: 7a01cb4396b860e409863dd5104da0d4, type: 3}
+  m_PrefabInstance: {fileID: 3506411045852564152}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323658367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &6650667516009590701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8264,11 +8281,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
---- !u!1 &6650667516009590702 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6237351815492329073, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
+--- !u!114 &6650667516009590702 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2803360555779720708, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
   m_PrefabInstance: {fileID: 6650667516009590701}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976279640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &6650667516009590703 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 178000099649770742, guid: f2ef98e829a062548ac88fadc2918c11, type: 3}
