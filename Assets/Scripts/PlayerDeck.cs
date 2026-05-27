@@ -255,6 +255,22 @@ public class PlayerDeck : MonoBehaviour
         {
             PlayerLose();
         }
+
+        // Blacks out image if card is dead
+        if (_empressInfo.health <= 0)
+        {
+            _empressImage.color = Color.black;
+        }
+
+        if (_cowboyInfo.health <= 0)
+        {
+            _cowboyImage.color = Color.black;
+        }
+
+        if (_androidInfo.health <= 0)
+        {
+            _androidImage.color = Color.black;
+        }
     }
     void AttackPopup()
     {
@@ -333,7 +349,7 @@ public class PlayerDeck : MonoBehaviour
             else
             {
                 _androidInfo.health = 0;
-                LocatorScript.Instance.UpgradeManager._androidEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
+                //LocatorScript.Instance.UpgradeManager._androidEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
                 _playerHealth = _androidInfo.health;
 
                 //Disable 
@@ -354,7 +370,7 @@ public class PlayerDeck : MonoBehaviour
             else
             {
                 _cowboyInfo.health = 0;
-                LocatorScript.Instance.UpgradeManager._cowboyEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
+                //LocatorScript.Instance.UpgradeManager._cowboyEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
                 _playerHealth = _cowboyInfo.health;
                 Button cowboy = PlayerCardObjects[1].GetComponent<Button>();
                 cowboy.enabled = false;
@@ -373,10 +389,12 @@ public class PlayerDeck : MonoBehaviour
             else
             {
                 _empressInfo.health = 0;
-                LocatorScript.Instance.UpgradeManager._empressEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
+                //LocatorScript.Instance.UpgradeManager._empressEffect.GetComponent<SpriteRenderer>().sharedMaterials[0].shader = _deadVFX;
                 _playerHealth = _empressInfo.health;
                 Button empress = PlayerCardObjects[2].GetComponent<Button>();
                 empress.enabled = false;
+
+                _empressImage.color = Color.black;
             }
         }
 
@@ -384,7 +402,7 @@ public class PlayerDeck : MonoBehaviour
         if (_playerHealth <= 0)
         {
 
-            PlayerCardObjects.Find(card => card.name.Contains(attackedCard)).GetComponent<Image>().color = Color.grey;
+            //PlayerCardObjects.Find(card => card.name.Contains(attackedCard)).GetComponent<Image>().color = Color.grey;
             Debug.Log("Disable the character: " + attackedCard);
             PlayerCards.Remove(attackedCard.ToLower());
         }
