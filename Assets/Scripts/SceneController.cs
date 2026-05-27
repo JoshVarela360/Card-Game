@@ -29,6 +29,11 @@ public class SceneController : MonoBehaviour
 
     }
 
+    public void LoadCutscene2()
+    {
+        SceneManager.LoadScene("Cutscene2");
+    }
+
     public void LoadMapScene()
     {
         _previousSceneName = SceneManager.GetActiveScene().name;
