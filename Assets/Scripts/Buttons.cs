@@ -3,10 +3,10 @@ using System.Collections;
 
 public class Buttons : MonoBehaviour
 {
-
     //Events
     public delegate void ButtonPressed();
     public static event ButtonPressed TriggerButtonSFX;
+
     [SerializeField] private SceneController _sceneController;
 
     public GameObject lvlOneButton;
@@ -92,7 +92,7 @@ public class Buttons : MonoBehaviour
 
         yield return new WaitForSeconds(buttonClickSound.clip.length);
 
-        _sceneController.LoadLevelBossScene();
+        _sceneController.LoadCutscene2();
     }
 
     // MapButton all
